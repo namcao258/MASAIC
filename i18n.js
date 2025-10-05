@@ -82,10 +82,15 @@ function setLanguage(lang) {
         }
     });
 
-    // Update active state of language buttons
+    // Update active state of language buttons - remove active from all first
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.classList.remove('active');
-        if (btn.getAttribute('data-lang') === lang) {
+    });
+
+    // Then add active to the selected language button(s)
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        const btnText = btn.textContent.trim();
+        if ((lang === 'en' && btnText === 'EN') || (lang === 'ja' && btnText === '日本語')) {
             btn.classList.add('active');
         }
     });
