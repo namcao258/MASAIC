@@ -6,6 +6,25 @@
     <!-- TODO: Thay đổi tên đầy đủ của dự án ở đây -->
     <title>MASAIC - Multi-Agent Systems for AI Innovation and Collaboration</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        // Initialize language early to prevent content flash
+        (function() {
+            var lang = localStorage.getItem('language') || 'en';
+            document.documentElement.setAttribute('lang', lang);
+
+            // Set initial visibility based on language
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelectorAll('[data-lang-content]').forEach(function(el) {
+                    var elementLang = el.getAttribute('data-lang-content');
+                    if (elementLang === lang) {
+                        el.style.display = '';
+                    } else {
+                        el.style.display = 'none';
+                    }
+                });
+            });
+        })();
+    </script>
 </head>
 <body>
     <!-- Navigation -->

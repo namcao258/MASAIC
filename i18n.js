@@ -46,20 +46,18 @@ const translations = {
 // Current language (default: English)
 let currentLang = localStorage.getItem('language') || 'en';
 
-// Initialize language on page load
-document.addEventListener('DOMContentLoaded', function() {
+// Initialize language immediately (before DOMContentLoaded)
+// This prevents blank content on page load
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLanguage);
+} else {
+    initLanguage();
+}
+
+function initLanguage() {
     // Set initial language
     setLanguage(currentLang);
-
-    // Add event listeners to language buttons
-    const langButtons = document.querySelectorAll('.lang-btn');
-    langButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const lang = this.getAttribute('data-lang');
-            setLanguage(lang);
-        });
-    });
-});
+}
 
 // Set language function
 function setLanguage(lang) {
@@ -102,9 +100,9 @@ function setLanguage(lang) {
     document.querySelectorAll('[data-lang-content]').forEach(element => {
         const elementLang = element.getAttribute('data-lang-content');
         if (elementLang === lang) {
-            element.style.display = '';
+            element.style.display = ''; // Show current language
         } else {
-            element.style.display = 'none';
+            element.style.display = 'none'; // Hide other languages
         }
     });
 }
