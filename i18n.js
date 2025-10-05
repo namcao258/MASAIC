@@ -57,6 +57,14 @@ if (document.readyState === 'loading') {
 function initLanguage() {
     // Set initial language
     setLanguage(currentLang);
+
+    // Add click event listeners to language buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang') || (this.textContent.trim() === 'EN' ? 'en' : 'ja');
+            setLanguage(lang);
+        });
+    });
 }
 
 // Set language function

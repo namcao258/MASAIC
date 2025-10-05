@@ -22,6 +22,16 @@
                         el.style.display = 'none';
                     }
                 });
+
+                // Set active button immediately on load
+                document.querySelectorAll('.lang-btn').forEach(function(btn) {
+                    var btnText = btn.textContent.trim();
+                    if ((lang === 'en' && btnText === 'EN') || (lang === 'ja' && btnText === '日本語')) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
             });
         })();
     </script>
