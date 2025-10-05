@@ -83,6 +83,37 @@ body {
     color: var(--primary-color);
 }
 
+/* Language Switcher */
+.language-switcher {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.lang-btn {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--border-color);
+    background-color: var(--white);
+    color: var(--text-dark);
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.lang-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.lang-btn.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+}
+
 /* ========================================
    Hero Section
    ======================================== */
@@ -985,6 +1016,16 @@ body {
         justify-content: center;
         gap: 0.5rem;
         font-size: 0.9rem;
+    }
+
+    .language-switcher {
+        margin-left: 0;
+        justify-content: center;
+    }
+
+    .lang-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
     }
 
     .hero-title {

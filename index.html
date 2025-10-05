@@ -17,23 +17,28 @@
                 <p class="subtitle">Multi-Agent Systems for AI Innovation and Collaboration</p>
             </div>
             <ul class="nav-menu">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#teams">Teams</a></li>
-                <li><a href="members.html">Members</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="schedule.html">Schedule</a></li>
-                <li><a href="sponsors.html">Sponsors</a></li>
+                <li><a href="index.html" class="active" data-i18n="nav.home">Home</a></li>
+                <li><a href="#about" data-i18n="nav.about">About</a></li>
+                <li><a href="#teams" data-i18n="nav.teams">Teams</a></li>
+                <li><a href="members.html" data-i18n="nav.members">Members</a></li>
+                <li><a href="publications.html" data-i18n="nav.publications">Publications</a></li>
+                <li><a href="news.html" data-i18n="nav.news">News</a></li>
+                <li><a href="schedule.html" data-i18n="nav.schedule">Schedule</a></li>
+                <li><a href="sponsors.html" data-i18n="nav.sponsors">Sponsors</a></li>
             </ul>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="ja">日本語</button>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <!-- TODO: Thay đổi tiêu đề và mô tả dự án ở đây -->
+            <!-- TODO: Thay đổi tiêu đề và mô tả dự án ở đây -->
+            <!-- English Version -->
+            <div class="hero-content" data-lang-content="en">
                 <h1 class="hero-title">Advancing the Future of Intelligent Robotics</h1>
                 <p class="hero-description">
                     MASAIC is a cutting-edge research project exploring the integration of
@@ -41,8 +46,20 @@
                     enabling seamless human-robot collaboration and intelligent decision-making.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#about" class="btn btn-primary">Learn More</a>
+                    <a href="#about" class="btn btn-primary" data-i18n="common.learnmore">Learn More</a>
                     <a href="#teams" class="btn btn-secondary">Our Teams</a>
+                </div>
+            </div>
+            <!-- Japanese Version -->
+            <div class="hero-content" data-lang-content="ja" style="display: none;">
+                <h1 class="hero-title">インテリジェントロボティクスの未来を切り拓く</h1>
+                <p class="hero-description">
+                    MASAICは、大規模言語モデル（LLM）とAI技術を自律ロボットシステムに統合し、
+                    シームレスな人間とロボットの協働と知的な意思決定を可能にする最先端の研究プロジェクトです。
+                </p>
+                <div class="hero-buttons">
+                    <a href="#about" class="btn btn-primary" data-i18n="common.learnmore">詳しく見る</a>
+                    <a href="#teams" class="btn btn-secondary">チーム紹介</a>
                 </div>
             </div>
         </div>
@@ -184,6 +201,7 @@
         </div>
     </footer>
 
+    <script src="i18n.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
