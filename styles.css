@@ -51,6 +51,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1.2rem 20px;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .nav-brand h1 {
@@ -68,7 +70,13 @@ body {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.nav-menu li a {
+    white-space: nowrap;
+    font-size: 0.9rem;
 }
 
 .nav-menu a {
