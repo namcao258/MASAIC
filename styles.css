@@ -5,14 +5,21 @@
 
 /* CSS Variables - Thay đổi màu sắc chủ đạo ở đây */
 :root {
-    --primary-color: #2563eb;      /* Xanh dương chính */
-    --secondary-color: #1e40af;    /* Xanh dương đậm */
-    --accent-color: #60a5fa;       /* Xanh dương nhạt */
-    --text-dark: #1f2937;          /* Màu chữ đen */
-    --text-light: #6b7280;         /* Màu chữ xám */
-    --bg-light: #f9fafb;           /* Nền sáng */
+    --primary-color: #6366f1;      /* Indigo - AI/Tech */
+    --secondary-color: #8b5cf6;    /* Purple - Innovation */
+    --accent-color: #ec4899;       /* Pink - Dynamic */
+    --tertiary-color: #06b6d4;     /* Cyan - Future */
+    --text-dark: #0f172a;          /* Màu chữ đen */
+    --text-light: #64748b;         /* Màu chữ xám */
+    --bg-light: #f8fafc;           /* Nền sáng */
     --white: #ffffff;
-    --border-color: #e5e7eb;
+    --border-color: #e2e8f0;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+    --gradient-secondary: linear-gradient(135deg, #06b6d4 0%, #6366f1 100%);
+    --gradient-accent: linear-gradient(135deg, #ec4899 0%, #f59e0b 100%);
+    --gradient-subtle: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
 }
 
 * {
@@ -57,12 +64,56 @@ body {
 
 .nav-brand {
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.brand-logo {
+    height: 75px;
+    width: auto;
+    object-fit: contain;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
 }
 
 .nav-brand h1 {
     font-size: 1.6rem;
-    color: var(--primary-color);
     margin-bottom: 0.2rem;
+}
+
+.brand-name {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.cross-x {
+    color: #dc2626;
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+.masaic-name {
+    font-size: 1.6rem;
+}
+
+.mas {
+    color: #000000;
+    font-weight: 700;
+}
+
+.ai-red {
+    color: #dc2626;
+    font-weight: 700;
+}
+
+.c-black {
+    color: #000000;
+    font-weight: 700;
 }
 
 .nav-brand .subtitle {
@@ -101,12 +152,36 @@ body {
     color: var(--primary-color);
 }
 
+/* Nav Right Section */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-shrink: 0;
+}
+
+/* Sponsor Logos */
+.sponsor-logos {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sponsor-logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+.crest-logo {
+    height: 150px;
+}
+
 /* Language Switcher */
 .language-switcher {
     display: flex;
     gap: 0.5rem;
     align-items: center;
-    margin-left: 1rem;
     flex-shrink: 0;
 }
 
@@ -138,15 +213,476 @@ body {
    Hero Section
    ======================================== */
 .hero {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    color: var(--white);
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    color: var(--text-dark);
     padding: 5rem 0;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Tech Background Elements */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+    z-index: 0;
+}
+
+/* Decorative lines and circles */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(99, 102, 241, 0.03) 50px, rgba(99, 102, 241, 0.03) 51px),
+        repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(99, 102, 241, 0.03) 50px, rgba(99, 102, 241, 0.03) 51px);
+    z-index: 0;
+}
+
+/* Gears - Different sizes with fixed centers */
+.gear {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+/* Gear 1 - Extra Large - Top Left */
+.gear-1 {
+    top: 5%;
+    left: 3%;
+    width: 200px;
+    height: 200px;
+    background-image: url('images/gears/gear-01.png');
+    animation: gearRotate 25s linear infinite;
+}
+
+/* Gear 2 - Large - Top Right */
+.gear-2 {
+    top: 8%;
+    right: 5%;
+    width: 150px;
+    height: 150px;
+    background-image: url('images/gears/gear-02.png');
+    animation: gearRotateReverse 20s linear infinite;
+}
+
+/* Gear 3 - Medium - Bottom Left */
+.gear-3 {
+    bottom: 15%;
+    left: 8%;
+    width: 120px;
+    height: 120px;
+    background-image: url('images/gears/gear-03.png');
+    animation: gearRotate 18s linear infinite;
+}
+
+/* Gear 4 - Small - Bottom Right */
+.gear-4 {
+    bottom: 10%;
+    right: 10%;
+    width: 90px;
+    height: 90px;
+    background-image: url('images/gears/gear-04.png');
+    animation: gearRotateReverse 15s linear infinite;
+}
+
+/* Gear 5 - Medium - Center Right */
+.gear-5 {
+    top: 45%;
+    right: 2%;
+    width: 110px;
+    height: 110px;
+    background-image: url('images/gears/gear-05.png');
+    animation: gearRotate 22s linear infinite;
+}
+
+/* Gear 6 - Medium - Top Center */
+.gear-6 {
+    top: 3%;
+    left: 40%;
+    width: 100px;
+    height: 100px;
+    background-image: url('images/gears/gear-06.png');
+    animation: gearRotateReverse 17s linear infinite;
+}
+
+/* Gear 7 - Large - Bottom Center */
+.gear-7 {
+    bottom: 8%;
+    left: 35%;
+    width: 130px;
+    height: 130px;
+    background-image: url('images/gears/gear-07.png');
+    animation: gearRotate 28s linear infinite;
+}
+
+/* Gear 8 - Medium - Center Left */
+.gear-8 {
+    top: 50%;
+    left: 15%;
+    width: 95px;
+    height: 95px;
+    background-image: url('images/gears/gear-08.png');
+    animation: gearRotateReverse 19s linear infinite;
+}
+
+/* Gear 9 - Small - Top Right Corner */
+.gear-9 {
+    top: 20%;
+    right: 15%;
+    width: 70px;
+    height: 70px;
+    background-image: url('images/gears/gear-09.png');
+    animation: gearRotate 13s linear infinite;
+}
+
+/* Gear 10 - Medium Large - Bottom Right Area */
+.gear-10 {
+    bottom: 5%;
+    right: 25%;
+    width: 140px;
+    height: 140px;
+    background-image: url('images/gears/gear-10.png');
+    animation: gearRotateReverse 30s linear infinite;
+}
+
+/* Gear 11 - Small - Near Gear 1 (linked) */
+.gear-11 {
+    top: 12%;
+    left: 10%;
+    width: 80px;
+    height: 80px;
+    background-image: url('images/gears/gear-11.png');
+    animation: gearRotateReverse 16s linear infinite;
+}
+
+/* Gear 12 - Medium - Near Gear 2 (linked) */
+.gear-12 {
+    top: 15%;
+    right: 9%;
+    width: 100px;
+    height: 100px;
+    background-image: url('images/gears/gear-12.png');
+    animation: gearRotate 19s linear infinite;
+}
+
+/* Gear 13 - Small - Near Gear 3 (linked) */
+.gear-13 {
+    bottom: 20%;
+    left: 12%;
+    width: 70px;
+    height: 70px;
+    background-image: url('images/gears/gear-01.png');
+    animation: gearRotateReverse 14s linear infinite;
+}
+
+/* Gear 14 - Small - Near Gear 4 (linked) */
+.gear-14 {
+    bottom: 16%;
+    right: 14%;
+    width: 65px;
+    height: 65px;
+    background-image: url('images/gears/gear-02.png');
+    animation: gearRotate 12s linear infinite;
+}
+
+/* Gear 15 - Medium - Left Side Cluster */
+.gear-15 {
+    top: 32%;
+    left: 5%;
+    width: 110px;
+    height: 110px;
+    background-image: url('images/gears/gear-03.png');
+    animation: gearRotateReverse 21s linear infinite;
+}
+
+/* Gear 16 - Small - Right Side Cluster */
+.gear-16 {
+    top: 38%;
+    right: 6%;
+    width: 75px;
+    height: 75px;
+    background-image: url('images/gears/gear-04.png');
+    animation: gearRotate 15s linear infinite;
+}
+
+/* Gear 17 - Medium - Left Side Near 15 */
+.gear-17 {
+    top: 24%;
+    left: 8%;
+    width: 85px;
+    height: 85px;
+    background-image: url('images/gears/gear-05.png');
+    animation: gearRotateReverse 17s linear infinite;
+}
+
+/* Gear 18 - Small - Top Left Cluster */
+.gear-18 {
+    top: 18%;
+    left: 4%;
+    width: 60px;
+    height: 60px;
+    background-image: url('images/gears/gear-06.png');
+    animation: gearRotate 11s linear infinite;
+}
+
+/* Gear 19 - Medium - Bottom Left Cluster */
+.gear-19 {
+    bottom: 28%;
+    left: 6%;
+    width: 95px;
+    height: 95px;
+    background-image: url('images/gears/gear-07.png');
+    animation: gearRotateReverse 20s linear infinite;
+}
+
+/* Gear 20 - Small - Top Right Cluster */
+.gear-20 {
+    top: 28%;
+    right: 10%;
+    width: 68px;
+    height: 68px;
+    background-image: url('images/gears/gear-08.png');
+    animation: gearRotate 14s linear infinite;
+}
+
+/* Additional 20 gears - Positioned at edges only, avoiding center */
+.gear-21 {
+    top: 2%;
+    left: 10%;
+    width: 55px;
+    height: 55px;
+    background-image: url('images/gears/gear-09.png');
+    animation: gearRotateReverse 10s linear infinite;
+}
+
+.gear-22 {
+    top: 6%;
+    right: 12%;
+    width: 72px;
+    height: 72px;
+    background-image: url('images/gears/gear-10.png');
+    animation: gearRotate 16s linear infinite;
+}
+
+.gear-23 {
+    top: 18%;
+    left: 2%;
+    width: 88px;
+    height: 88px;
+    background-image: url('images/gears/gear-11.png');
+    animation: gearRotateReverse 18s linear infinite;
+}
+
+.gear-24 {
+    top: 28%;
+    left: 8%;
+    width: 62px;
+    height: 62px;
+    background-image: url('images/gears/gear-12.png');
+    animation: gearRotate 13s linear infinite;
+}
+
+.gear-25 {
+    top: 38%;
+    left: 2%;
+    width: 78px;
+    height: 78px;
+    background-image: url('images/gears/gear-01.png');
+    animation: gearRotateReverse 15s linear infinite;
+}
+
+.gear-26 {
+    top: 12%;
+    left: 18%;
+    width: 58px;
+    height: 58px;
+    background-image: url('images/gears/gear-02.png');
+    animation: gearRotate 12s linear infinite;
+}
+
+.gear-27 {
+    top: 5%;
+    right: 25%;
+    width: 65px;
+    height: 65px;
+    background-image: url('images/gears/gear-03.png');
+    animation: gearRotateReverse 14s linear infinite;
+}
+
+.gear-28 {
+    top: 15%;
+    right: 8%;
+    width: 68px;
+    height: 68px;
+    background-image: url('images/gears/gear-04.png');
+    animation: gearRotate 15s linear infinite;
+}
+
+.gear-29 {
+    top: 32%;
+    right: 4%;
+    width: 82px;
+    height: 82px;
+    background-image: url('images/gears/gear-05.png');
+    animation: gearRotateReverse 17s linear infinite;
+}
+
+.gear-30 {
+    bottom: 22%;
+    left: 3%;
+    width: 70px;
+    height: 70px;
+    background-image: url('images/gears/gear-06.png');
+    animation: gearRotate 14s linear infinite;
+}
+
+.gear-31 {
+    bottom: 2%;
+    left: 12%;
+    width: 90px;
+    height: 90px;
+    background-image: url('images/gears/gear-07.png');
+    animation: gearRotateReverse 18s linear infinite;
+}
+
+.gear-32 {
+    bottom: 25%;
+    left: 10%;
+    width: 64px;
+    height: 64px;
+    background-image: url('images/gears/gear-08.png');
+    animation: gearRotate 13s linear infinite;
+}
+
+.gear-33 {
+    bottom: 2%;
+    right: 8%;
+    width: 86px;
+    height: 86px;
+    background-image: url('images/gears/gear-09.png');
+    animation: gearRotateReverse 17s linear infinite;
+}
+
+.gear-34 {
+    bottom: 20%;
+    right: 5%;
+    width: 74px;
+    height: 74px;
+    background-image: url('images/gears/gear-10.png');
+    animation: gearRotate 15s linear infinite;
+}
+
+.gear-35 {
+    top: 52%;
+    right: 8%;
+    width: 66px;
+    height: 66px;
+    background-image: url('images/gears/gear-11.png');
+    animation: gearRotateReverse 13s linear infinite;
+}
+
+.gear-36 {
+    top: 42%;
+    right: 15%;
+    width: 76px;
+    height: 76px;
+    background-image: url('images/gears/gear-12.png');
+    animation: gearRotate 15s linear infinite;
+}
+
+.gear-37 {
+    bottom: 5%;
+    left: 22%;
+    width: 58px;
+    height: 58px;
+    background-image: url('images/gears/gear-01.png');
+    animation: gearRotateReverse 11s linear infinite;
+}
+
+.gear-38 {
+    top: 8%;
+    right: 22%;
+    width: 70px;
+    height: 70px;
+    background-image: url('images/gears/gear-02.png');
+    animation: gearRotate 14s linear infinite;
+}
+
+.gear-39 {
+    bottom: 28%;
+    right: 12%;
+    width: 62px;
+    height: 62px;
+    background-image: url('images/gears/gear-03.png');
+    animation: gearRotateReverse 12s linear infinite;
+}
+
+.gear-40 {
+    bottom: 8%;
+    right: 18%;
+    width: 80px;
+    height: 80px;
+    background-image: url('images/gears/gear-04.png');
+    animation: gearRotate 16s linear infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-10%, -10%) scale(1.1); }
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes gearRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes gearRotateReverse {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
 }
 
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .hero-title {
@@ -180,24 +716,27 @@ body {
 }
 
 .btn-primary {
-    background-color: var(--white);
-    color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: 2px solid var(--primary-color);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255,255,255,0.3);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
 }
 
 .btn-secondary {
     background-color: transparent;
-    color: var(--white);
-    border: 2px solid var(--white);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
 }
 
 .btn-secondary:hover {
-    background-color: var(--white);
-    color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: var(--white);
 }
 
 /* ========================================
@@ -244,22 +783,54 @@ body {
 }
 
 .feature-card {
-    background-color: var(--bg-light);
+    background: var(--gradient-subtle);
     padding: 2rem;
     border-radius: 12px;
     text-align: center;
     transition: all 0.3s;
     border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transition: transform 0.3s;
 }
 
 .feature-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 24px rgba(99, 102, 241, 0.15);
+}
+
+.feature-card:hover::before {
+    transform: scaleX(1);
 }
 
 .feature-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
+    display: inline-block;
+    animation: float 3s ease-in-out infinite;
+}
+
+.feature-card:nth-child(2) .feature-icon {
+    animation-delay: 0.5s;
+}
+
+.feature-card:nth-child(3) .feature-icon {
+    animation-delay: 1s;
+}
+
+.feature-card:nth-child(4) .feature-icon {
+    animation-delay: 1.5s;
 }
 
 .feature-card h3 {
@@ -288,6 +859,32 @@ body {
     margin-top: 3rem;
 }
 
+/* Single team layout - centered */
+.teams-grid-single {
+    grid-template-columns: 1fr;
+    max-width: calc(33.333% - 1.33rem);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Three teams layout */
+.teams-grid-three {
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 2rem;
+}
+
+@media (max-width: 992px) {
+    .teams-grid-three {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .teams-grid-three {
+        grid-template-columns: 1fr;
+    }
+}
+
 .team-card {
     background-color: var(--white);
     border-radius: 12px;
@@ -307,11 +904,27 @@ body {
 .team-image {
     width: 100%;
     height: 200px;
-    background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
+    background: var(--gradient-primary);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+}
+
+.team-card:nth-child(1) .team-image {
+    background: var(--gradient-primary);
+}
+
+.team-card:nth-child(2) .team-image {
+    background: var(--gradient-secondary);
+}
+
+.team-card:nth-child(3) .team-image {
+    background: var(--gradient-accent);
+}
+
+.team-card:nth-child(4) .team-image {
+    background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
 }
 
 .team-image img {

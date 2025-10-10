@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>International Collaboration - MASAIC</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Initialize language early to prevent content flash
+        (function() {
+            var lang = localStorage.getItem('language') || 'en';
+            document.documentElement.setAttribute('lang', lang);
+
+            // Set initial visibility based on language
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelectorAll('[data-lang-content]').forEach(function(el) {
+                    var elementLang = el.getAttribute('data-lang-content');
+                    if (elementLang === lang) {
+                        el.style.display = '';
+                    } else {
+                        el.style.display = 'none';
+                    }
+                });
+
+                // Set active button immediately on load
+                document.querySelectorAll('.lang-btn').forEach(function(btn) {
+                    var btnText = btn.textContent.trim();
+                    if ((lang === 'en' && btnText === 'EN') || (lang === 'ja' && btnText === '日本語')) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+            });
+        })();
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="images/logo/logo.png" alt="MASAIC Logo" class="brand-logo">
+                <div class="brand-text">
+                    <h1 class="brand-name">
+                        <span class="cross-x">CROSS-X</span>
+                        <span class="masaic-name">
+                            <span class="mas">MAS</span><span class="ai-red">AI</span><span class="c-black">C</span>
+                        </span>
+                    </h1>
+                    <p class="subtitle">Modular Soft Adaptive Intelligent Component</p>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                <li><a href="index.html#about" data-i18n="nav.about">About</a></li>
+                <li><a href="index.html#teams" data-i18n="nav.teams">Teams</a></li>
+                <li><a href="members.html" data-i18n="nav.members">Members</a></li>
+                <li><a href="publications.html" data-i18n="nav.publications">Publications</a></li>
+                <li><a href="news.html" data-i18n="nav.news">News</a></li>
+                <li><a href="schedule.html" data-i18n="nav.schedule">Schedule</a></li>
+                <li><a href="collaboration.html" class="active" data-i18n="nav.collaboration">Collaboration</a></li>
+                <li><a href="sponsors.html" data-i18n="nav.sponsors">Sponsors</a></li>
+            </ul>
+            <div class="nav-right">
+                <div class="sponsor-logos">
+                    <img src="images/logo/JST_logo.png" alt="JST Logo" class="sponsor-logo">
+                    <img src="images/logo/CREST_logo.png" alt="CREST Logo" class="sponsor-logo crest-logo">
+                </div>
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="ja">日本語</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="team-header">
+        <div class="container">
+            <!-- English Version -->
+            <div data-lang-content="en">
+                <h1>International Collaboration</h1>
+                <p>Building global partnerships to advance robotics and AI research</p>
+            </div>
+            <!-- Japanese Version -->
+            <div data-lang-content="ja" style="display: none;">
+                <h1>国際連携</h1>
+                <p>ロボティクスとAI研究を推進するためのグローバルパートナーシップの構築</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collaboration Content -->
+    <section class="team-detail">
+        <div class="container">
+            <div class="team-content">
+                <!-- English Version -->
+                <div data-lang-content="en">
+                    <h2>Overview</h2>
+                    <p>
+                        The MASAIC project actively collaborates with leading research institutions and universities
+                        around the world to advance the frontiers of robotics and artificial intelligence. Through
+                        these partnerships, we exchange knowledge, share resources, and work together on cutting-edge
+                        research projects.
+                    </p>
+
+                    <h2>Partner Institutions</h2>
+
+                    <!-- Partners Grid -->
+                    <div class="members-grid">
+                        <div class="member-card">
+                            <div class="member-photo">🏛️</div>
+                            <h3>Partner University 1</h3>
+                            <span class="role">Academic Partnership</span>
+                            <p>Collaborative research in multi-agent systems and robotics</p>
+                        </div>
+
+                        <div class="member-card">
+                            <div class="member-photo">🏛️</div>
+                            <h3>Partner University 2</h3>
+                            <span class="role">Research Collaboration</span>
+                            <p>Joint projects in AI and machine learning</p>
+                        </div>
+
+                        <div class="member-card">
+                            <div class="member-photo">🏛️</div>
+                            <h3>Partner University 3</h3>
+                            <span class="role">Exchange Program</span>
+                            <p>Student and researcher exchange initiatives</p>
+                        </div>
+
+                        <div class="member-card">
+                            <div class="member-photo">🏛️</div>
+                            <h3>Partner Institution 4</h3>
+                            <span class="role">Industry Partnership</span>
+                            <p>Applied research and technology transfer</p>
+                        </div>
+                    </div>
+
+                    <h2>Collaboration Activities</h2>
+                    <div class="about-content">
+                        <p><strong>Joint Research Projects:</strong> Collaborative research on advanced topics in robotics, AI, and multi-agent systems</p>
+                        <p><strong>Academic Exchange:</strong> Student and researcher exchange programs to foster international cooperation</p>
+                        <p><strong>Workshops & Conferences:</strong> Joint organization of international workshops and conferences</p>
+                        <p><strong>Publications:</strong> Co-authored papers and joint publications in leading journals and conferences</p>
+                    </div>
+
+                    <h2>Contact for Collaboration</h2>
+                    <p>
+                        If you are interested in collaborating with the MASAIC project, please contact us at
+                        <a href="mailto:van-ho@jaist.ac.jp">van-ho@jaist.ac.jp</a>
+                    </p>
+                </div>
+
+                <!-- Japanese Version -->
+                <div data-lang-content="ja" style="display: none;">
+                    <h2>概要</h2>
+                    <p>
+                        MASAICプロジェクトは、世界中の主要な研究機関や大学と積極的に協力し、
+                        ロボティクスと人工知能の最前線を推進しています。これらのパートナーシップを通じて、
+                        知識を交換し、リソースを共有し、最先端の研究プロジェクトに共同で取り組んでいます。
+                    </p>
+
+                    <h2>パートナー機関</h2>
+
+                    <!-- Partners Grid -->
+                    <div class="members-grid">
+                        <div class="member-card">
+                            <div class="member-photo">🏛️</div>
+                            <h3>パートナー大学1</h3>
+                            <span class="role">学術パートナーシップ</span>
+                            <p>マルチエージェントシステムとロボティクスの共同研究</p>
+                        </div>
+
+                        <div class="member-card">
+                            <div class="member-photo">🏛️</div>
+                            <h3>パートナー大学2</h3>
+                            <span class="role">研究協力</span>
+                            <p>AIと機械学習の共同プロジェクト</p>
+                        </div>
+
+                        <div class="member-card">
+                            <div class="member-photo">🏛️</div>
+                            <h3>パートナー大学3</h3>
+                            <span class="role">交流プログラム</span>
+                            <p>学生と研究者の交流イニシアチブ</p>
+                        </div>
+
+                        <div class="member-card">
+                            <div class="member-photo">🏛️</div>
+                            <h3>パートナー機関4</h3>
+                            <span class="role">産業パートナーシップ</span>
+                            <p>応用研究と技術移転</p>
+                        </div>
+                    </div>
+
+                    <h2>連携活動</h2>
+                    <div class="about-content">
+                        <p><strong>共同研究プロジェクト:</strong> ロボティクス、AI、マルチエージェントシステムの高度なトピックに関する共同研究</p>
+                        <p><strong>学術交流:</strong> 国際協力を促進するための学生と研究者の交流プログラム</p>
+                        <p><strong>ワークショップ・会議:</strong> 国際ワークショップと会議の共同開催</p>
+                        <p><strong>出版物:</strong> 主要なジャーナルと会議での共著論文と共同出版</p>
+                    </div>
+
+                    <h2>連携のお問い合わせ</h2>
+                    <p>
+                        MASAICプロジェクトとの連携にご興味がある方は、
+                        <a href="mailto:van-ho@jaist.ac.jp">van-ho@jaist.ac.jp</a>までご連絡ください。
+                    </p>
+                </div>
+
+                <a href="index.html" class="back-link">← Back to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 MASAIC Project. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
