@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seminar Series - MASAIC</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Initialize language early to prevent content flash
+        (function() {
+            var lang = localStorage.getItem('language') || 'en';
+            document.documentElement.setAttribute('lang', lang);
+
+            // Set initial visibility based on language
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelectorAll('[data-lang-content]').forEach(function(el) {
+                    var elementLang = el.getAttribute('data-lang-content');
+                    if (elementLang === lang) {
+                        el.style.display = '';
+                    } else {
+                        el.style.display = 'none';
+                    }
+                });
+
+                // Set active button immediately on load
+                document.querySelectorAll('.lang-btn').forEach(function(btn) {
+                    var btnText = btn.textContent.trim();
+                    if ((lang === 'en' && btnText === 'EN') || (lang === 'ja' && btnText === '日本語')) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+            });
+        })();
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="images/logo/logo.png" alt="MASAIC Logo" class="brand-logo">
+                <div class="brand-text">
+                    <h1 class="brand-name">
+                        <span class="cross-x">CROSS-X</span>
+                        <span class="masaic-name">
+                            <span class="mas">MAS</span><span class="ai-red">AI</span><span class="c-black">C</span>
+                        </span>
+                    </h1>
+                    <p class="subtitle">Modular Soft Adaptive Intelligent Component</p>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#teams">Teams</a></li>
+                <li><a href="members.html">Members</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="seminar.html" class="active">Seminar</a></li>
+                <li><a href="collaboration.html">Collaboration</a></li>
+                <li><a href="sponsors.html">Sponsors</a></li>
+            </ul>
+            <div class="nav-right">
+                <div class="sponsor-logos">
+                    <img src="images/logo/JST_logo.png" alt="JST Logo" class="sponsor-logo">
+                    <img src="images/logo/CREST_logo.png" alt="CREST Logo" class="sponsor-logo crest-logo">
+                </div>
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="ja">日本語</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Seminar Content -->
+    <section class="team-detail">
+        <div class="container">
+            <div class="team-content">
+                <!-- English Version -->
+                <div data-lang-content="en">
+                    <h2>About the Series</h2>
+                    <p>
+                        The MASAIC Seminar Series brings together leading researchers and practitioners in robotics,
+                        artificial intelligence, and autonomous systems. Our seminars feature cutting-edge research,
+                        practical applications, and future directions in intelligent robotics.
+                    </p>
+                    <p>
+                        <strong>Time:</strong> Fridays at 15:00 JST<br>
+                        <strong>Location:</strong> Hybrid (In-person at JAIST & Online via Zoom)<br>
+                        <strong>Language:</strong> English
+                    </p>
+
+                    <h2>Upcoming Seminars</h2>
+
+                    <!-- Seminar Speaker Cards -->
+                    <div class="seminar-grid">
+                        <!-- Speaker 1 -->
+                        <div class="seminar-card">
+                            <div class="speaker-photo">
+                                <img src="images/speakers/speaker-placeholder.jpg" alt="Speaker 1">
+                            </div>
+                            <div class="speaker-info">
+                                <h3>Dr. [Speaker Name]</h3>
+                                <p class="affiliation">[University/Institution]</p>
+                                <p class="speaker-title">[Position]</p>
+                                <div class="talk-info">
+                                    <p class="talk-title"><strong>Talk:</strong> [Title TBD]</p>
+                                    <p class="talk-date">📅 March 7, 2025 - 15:00 JST</p>
+                                    <p class="talk-abstract">
+                                        <strong>Abstract:</strong> Coming soon...
+                                    </p>
+                                </div>
+                                <div class="seminar-links">
+                                    <a href="#" class="pub-link">📺 YouTube</a>
+                                    <a href="#" class="pub-link">📄 Slides</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Speaker 2 -->
+                        <div class="seminar-card">
+                            <div class="speaker-photo">
+                                <img src="images/speakers/speaker-placeholder.jpg" alt="Speaker 2">
+                            </div>
+                            <div class="speaker-info">
+                                <h3>Dr. [Speaker Name]</h3>
+                                <p class="affiliation">[University/Institution]</p>
+                                <p class="speaker-title">[Position]</p>
+                                <div class="talk-info">
+                                    <p class="talk-title"><strong>Talk:</strong> [Title TBD]</p>
+                                    <p class="talk-date">📅 March 14, 2025 - 15:00 JST</p>
+                                    <p class="talk-abstract">
+                                        <strong>Abstract:</strong> Coming soon...
+                                    </p>
+                                </div>
+                                <div class="seminar-links">
+                                    <a href="#" class="pub-link">📺 YouTube</a>
+                                    <a href="#" class="pub-link">📄 Slides</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Speaker 3 -->
+                        <div class="seminar-card">
+                            <div class="speaker-photo">
+                                <img src="images/speakers/speaker-placeholder.jpg" alt="Speaker 3">
+                            </div>
+                            <div class="speaker-info">
+                                <h3>Dr. [Speaker Name]</h3>
+                                <p class="affiliation">[University/Institution]</p>
+                                <p class="speaker-title">[Position]</p>
+                                <div class="talk-info">
+                                    <p class="talk-title"><strong>Talk:</strong> [Title TBD]</p>
+                                    <p class="talk-date">📅 March 21, 2025 - 15:00 JST</p>
+                                    <p class="talk-abstract">
+                                        <strong>Abstract:</strong> Coming soon...
+                                    </p>
+                                </div>
+                                <div class="seminar-links">
+                                    <a href="#" class="pub-link">📺 YouTube</a>
+                                    <a href="#" class="pub-link">📄 Slides</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2>Past Seminars</h2>
+                    <div id="past-seminars-en">
+                        <table class="seminar-table">
+                            <thead>
+                                <tr>
+                                    <th>Speaker</th>
+                                    <th>Talk title</th>
+                                    <th>Date/Time</th>
+                                    <th>YouTube link</th>
+                                </tr>
+                            </thead>
+                            <tbody id="past-seminars-tbody-en">
+                                <!-- Past seminars will be loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h2>Join Our Mailing List</h2>
+                    <p>
+                        Stay updated with our latest seminars and events. Contact us at
+                        <a href="mailto:van-ho@jaist.ac.jp">van-ho@jaist.ac.jp</a> to subscribe.
+                    </p>
+                </div>
+
+                <!-- Japanese Version -->
+                <div data-lang-content="ja" style="display: none;">
+                    <h2>シリーズについて</h2>
+                    <p>
+                        MASAICセミナーシリーズは、ロボティクス、人工知能、自律システムの分野における
+                        第一線の研究者と実務家を集めています。最先端の研究、実用的な応用、
+                        インテリジェントロボティクスの将来の方向性について講演します。
+                    </p>
+                    <p>
+                        <strong>時間:</strong> 毎週金曜日 15:00 JST<br>
+                        <strong>場所:</strong> ハイブリッド（JAIST対面 & Zoomオンライン）<br>
+                        <strong>言語:</strong> 英語
+                    </p>
+
+                    <h2>今後のセミナー</h2>
+
+                    <!-- Seminar Speaker Cards -->
+                    <div class="seminar-grid">
+                        <!-- Speaker 1 -->
+                        <div class="seminar-card">
+                            <div class="speaker-photo">
+                                <img src="images/speakers/speaker-placeholder.jpg" alt="講演者1">
+                            </div>
+                            <div class="speaker-info">
+                                <h3>[講演者名]博士</h3>
+                                <p class="affiliation">[大学/機関]</p>
+                                <p class="speaker-title">[役職]</p>
+                                <div class="talk-info">
+                                    <p class="talk-title"><strong>講演:</strong> [タイトル未定]</p>
+                                    <p class="talk-date">📅 2025年3月7日 - 15:00 JST</p>
+                                    <p class="talk-abstract">
+                                        <strong>概要:</strong> 近日公開...
+                                    </p>
+                                </div>
+                                <div class="seminar-links">
+                                    <a href="#" class="pub-link">📺 YouTube</a>
+                                    <a href="#" class="pub-link">📄 スライド</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Speaker 2 -->
+                        <div class="seminar-card">
+                            <div class="speaker-photo">
+                                <img src="images/speakers/speaker-placeholder.jpg" alt="講演者2">
+                            </div>
+                            <div class="speaker-info">
+                                <h3>[講演者名]博士</h3>
+                                <p class="affiliation">[大学/機関]</p>
+                                <p class="speaker-title">[役職]</p>
+                                <div class="talk-info">
+                                    <p class="talk-title"><strong>講演:</strong> [タイトル未定]</p>
+                                    <p class="talk-date">📅 2025年3月14日 - 15:00 JST</p>
+                                    <p class="talk-abstract">
+                                        <strong>概要:</strong> 近日公開...
+                                    </p>
+                                </div>
+                                <div class="seminar-links">
+                                    <a href="#" class="pub-link">📺 YouTube</a>
+                                    <a href="#" class="pub-link">📄 スライド</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Speaker 3 -->
+                        <div class="seminar-card">
+                            <div class="speaker-photo">
+                                <img src="images/speakers/speaker-placeholder.jpg" alt="講演者3">
+                            </div>
+                            <div class="speaker-info">
+                                <h3>[講演者名]博士</h3>
+                                <p class="affiliation">[大学/機関]</p>
+                                <p class="speaker-title">[役職]</p>
+                                <div class="talk-info">
+                                    <p class="talk-title"><strong>講演:</strong> [タイトル未定]</p>
+                                    <p class="talk-date">📅 2025年3月21日 - 15:00 JST</p>
+                                    <p class="talk-abstract">
+                                        <strong>概要:</strong> 近日公開...
+                                    </p>
+                                </div>
+                                <div class="seminar-links">
+                                    <a href="#" class="pub-link">📺 YouTube</a>
+                                    <a href="#" class="pub-link">📄 スライド</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2>過去のセミナー</h2>
+                    <div id="past-seminars-ja">
+                        <table class="seminar-table">
+                            <thead>
+                                <tr>
+                                    <th>講演者</th>
+                                    <th>講演タイトル</th>
+                                    <th>日時</th>
+                                    <th>YouTube</th>
+                                </tr>
+                            </thead>
+                            <tbody id="past-seminars-tbody-ja">
+                                <!-- Past seminars will be loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h2>メーリングリストに参加</h2>
+                    <p>
+                        最新のセミナーとイベント情報を受け取る。
+                        <a href="mailto:van-ho@jaist.ac.jp">van-ho@jaist.ac.jp</a>までご連絡ください。
+                    </p>
+                </div>
+
+                <a href="index.html" class="back-link">← Back to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 MASAIC Project. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Load and display seminars from JSON
+        async function loadSeminars() {
+            try {
+                // Fetch from both upcoming and past directories
+                const [upcomingResponse, pastResponse] = await Promise.all([
+                    fetch('seminars/upcoming/seminars.json'),
+                    fetch('seminars/past/seminars.json')
+                ]);
+
+                const upcomingSeminars = await upcomingResponse.json();
+                const pastSeminars = await pastResponse.json();
+
+                // Get current language
+                const lang = localStorage.getItem('language') || 'en';
+
+                // Clear existing placeholder cards
+                const enGrid = document.querySelector('[data-lang-content="en"] .seminar-grid');
+                const jaGrid = document.querySelector('[data-lang-content="ja"] .seminar-grid');
+
+                if (enGrid && jaGrid) {
+                    enGrid.innerHTML = '';
+                    jaGrid.innerHTML = '';
+
+                    // Render upcoming seminars
+                    if (upcomingSeminars.length > 0) {
+                        upcomingSeminars.forEach(seminar => {
+                            enGrid.innerHTML += createSeminarCard(seminar, 'en');
+                            jaGrid.innerHTML += createSeminarCard(seminar, 'ja');
+                        });
+                    } else {
+                        // Show placeholder if no upcoming seminars
+                        enGrid.innerHTML = '<p>No upcoming seminars at the moment. Check back soon!</p>';
+                        jaGrid.innerHTML = '<p>現在、予定されているセミナーはありません。後ほどご確認ください！</p>';
+                    }
+                }
+
+                // Populate past seminars table
+                const enTableBody = document.getElementById('past-seminars-tbody-en');
+                const jaTableBody = document.getElementById('past-seminars-tbody-ja');
+
+                if (enTableBody && jaTableBody && pastSeminars.length > 0) {
+                    enTableBody.innerHTML = '';
+                    jaTableBody.innerHTML = '';
+
+                    pastSeminars.forEach(seminar => {
+                        enTableBody.innerHTML += createPastSeminarRow(seminar, 'en');
+                        jaTableBody.innerHTML += createPastSeminarRow(seminar, 'ja');
+                    });
+                }
+            } catch (error) {
+                console.error('Error loading seminars:', error);
+            }
+        }
+
+        function createPastSeminarRow(seminar, lang) {
+            const isEn = lang === 'en';
+
+            // Format date
+            const date = new Date(seminar.date);
+            const dateStr = isEn ?
+                date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) :
+                date.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' });
+
+            const youtubeButton = seminar.youtube ?
+                `<a href="${seminar.youtube}" target="_blank" class="youtube-link">▶ YouTube</a>` :
+                `<span style="color: #999;">${isEn ? 'Coming soon' : '近日公開'}</span>`;
+
+            const photoSrc = seminar.speaker.photo || 'images/speakers/speaker-placeholder.jpg';
+
+            return `
+                <tr>
+                    <td class="speaker-cell">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <img src="${photoSrc}" alt="${seminar.speaker.name}" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                            <div>
+                                <div class="speaker-name">${seminar.speaker.name}</div>
+                                <div class="speaker-affiliation">${seminar.speaker.affiliation}</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="talk-cell">${seminar.title}</td>
+                    <td class="date-cell">${dateStr}<br>${seminar.time}</td>
+                    <td class="youtube-cell">${youtubeButton}</td>
+                </tr>
+            `;
+        }
+
+        function createSeminarCard(seminar, lang) {
+            const isEn = lang === 'en';
+
+            // Format dates
+            let dateDisplay = '';
+            if (seminar.series && seminar.series.isSeries) {
+                const talks = seminar.series.talks.map(talk => {
+                    const date = new Date(talk.date);
+                    const dateStr = isEn ?
+                        date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) :
+                        date.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' });
+                    const status = talk.status === 'tentative' ? (isEn ? ' (tentative)' : ' (暫定)') : '';
+                    return `${isEn ? 'Talk' : '講演'} ${talk.number}: ${dateStr}, ${talk.time} JST${status}`;
+                }).join('<br>');
+                dateDisplay = talks;
+            }
+
+            // Zoom info
+            const zoomInfo = seminar.zoom ? `
+                <div class="zoom-info" style="margin-top: 10px; padding: 10px; background: #f5f5f5; border-radius: 5px;">
+                    <strong>${isEn ? 'Zoom Information:' : 'Zoom情報:'}</strong><br>
+                    <a href="${seminar.zoom.url}" target="_blank" class="pub-link" style="word-break: break-all;">🔗 ${isEn ? 'Join Zoom Meeting' : 'Zoomミーティングに参加'}</a><br>
+                    <small>Meeting ID: ${seminar.zoom.meetingId}<br>
+                    Passcode: ${seminar.zoom.passcode}</small>
+                </div>
+            ` : '';
+
+            // PDF link
+            const pdfLink = seminar.pdfPath ? `
+                <a href="${seminar.pdfPath}" target="_blank" class="pub-link">📄 ${isEn ? 'Download PDF' : 'PDFダウンロード'}</a>
+            ` : '';
+
+            const photoSrc = seminar.speaker.photo || 'images/speakers/speaker-placeholder.jpg';
+
+            return `
+                <div class="seminar-card">
+                    <div class="speaker-photo">
+                        <img src="${photoSrc}" alt="${seminar.speaker.name}">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>${seminar.speaker.name}</h3>
+                        <p class="affiliation">${seminar.speaker.affiliation}</p>
+                        <p class="speaker-title">${seminar.speaker.title}</p>
+                        ${seminar.speaker.website ? `<p><a href="${seminar.speaker.website}" target="_blank" class="pub-link">🔗 ${isEn ? 'Website' : 'ウェブサイト'}</a></p>` : ''}
+                        <div class="talk-info">
+                            <p class="talk-title"><strong>${isEn ? 'Talk:' : '講演:'}</strong> ${seminar.title}</p>
+                            ${seminar.series && seminar.series.isSeries ? `<p style="font-style: italic; color: #666; margin-bottom: 0.5rem;"><em>${isEn ? 'This is a series of' : 'これは'} ${seminar.series.totalTalks} ${isEn ? 'talks' : '回の講演シリーズです'}</em></p>` : ''}
+                            <p class="talk-date">📅 ${dateDisplay}</p>
+                            <p class="talk-abstract">
+                                <strong>${isEn ? 'Abstract:' : '概要:'}</strong> ${seminar.abstract}
+                            </p>
+                        </div>
+                        ${zoomInfo}
+                        <div class="seminar-links" style="margin-top: 10px;">
+                            ${pdfLink}
+                        </div>
+                        <div class="speaker-bio" style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee;">
+                            <strong>${isEn ? 'Bio:' : '経歴:'}</strong>
+                            <p style="font-size: 0.9em; color: #666;">${seminar.speaker.bio}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Load seminars when page loads
+        document.addEventListener('DOMContentLoaded', loadSeminars);
+    </script>
+</body>
+</html>

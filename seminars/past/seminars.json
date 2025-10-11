@@ -1,0 +1,20 @@
+[
+  {
+    "id": "quan-luu-2024-talk1",
+    "speaker": {
+      "name": "Dr. Quan Luu",
+      "title": "Postdoctoral Researcher",
+      "affiliation": "Purdue University",
+      "website": "https://quan-luu.github.io",
+      "photo": "seminars/past/Quan Luu/QuanLuu_photo.png",
+      "bio": "His research interests lie in creating soft and sensorized multimodal robotic bodies, especially those with a sense of touch, and leveraging them in robot learning and control systems. His work aims to enable robots to perform skilled and flexible manipulation, particularly in scenarios where contact and safe interaction with objects and surroundings are crucial."
+    },
+    "title": "Trends, Challenges, and Outlook in Robot Learning: Toward Safe and Generalizable Robots Through Multimodal Cross-Embodiment Learning",
+    "type": "Online Lecture",
+    "abstract": "Robot learning has advanced rapidly with progress in large-scale imitation learning, reinforcement learning, and vision–language–action (VLA) models, enabling robots to perceive and act more effectively in unstructured environments. However, achieving safe and generalizable behaviors across diverse tasks and embodiments remains a major challenge. This talk will review recent trends in learning paradigms, scalable data collection, and foundation models, highlighting challenges in data diversity, embodiment transfer, safety, and robustness. I will also share an outlook on multimodal cross-embodiment learning—integrating novel robotic devices with hierarchical strategies from low-level control to high-level reasoning—as a pathway toward safe, adaptive, and generalizable robot systems.",
+    "pdfPath": "seminars/past/Quan Luu/invited talk Quan Luu.pdf",
+    "youtube": "https://www.youtube.com/watch?v=example",
+    "date": "2024-10-15",
+    "time": "9:00-10:30 JST"
+  }
+]

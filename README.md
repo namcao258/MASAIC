@@ -12,13 +12,32 @@ Dự án MASAIC tập trung vào nghiên cứu và phát triển hệ thống ro
 ```
 MASAIC/
 ├── index.html              # Trang chủ
-├── team-robotics.html      # Trang team Robotics & Control
-├── team-ai.html            # Trang team AI & LLM Integration
-├── team-perception.html    # Trang team Perception & Sensing
+├── members.html            # Trang danh sách thành viên
+├── publications.html       # Trang publications
+├── news.html              # Trang tin tức
+├── schedule.html          # Trang lịch làm việc
+├── seminar.html           # Trang seminar series
+├── collaboration.html     # Trang hợp tác
+├── sponsors.html          # Trang nhà tài trợ
+├── team-robotics.html     # Trang team Robotics & Control
+├── team-ai.html           # Trang team AI & LLM Integration
+├── team-perception.html   # Trang team Perception & Sensing
 ├── team-hri.html          # Trang team Human-Robot Interaction
 ├── styles.css             # File CSS chính
-├── script.js              # File JavaScript
+├── script.js              # File JavaScript chính
+├── i18n.js                # File đa ngôn ngữ (EN/JP)
 ├── images/                # Thư mục chứa hình ảnh
+├── seminars/              # Thư mục quản lý seminars
+│   ├── upcoming/          # Seminars sắp diễn ra
+│   │   ├── [Speaker Name]/
+│   │   │   ├── photo.png
+│   │   │   └── talk.pdf
+│   │   └── seminars.json
+│   └── past/              # Seminars đã diễn ra
+│       ├── [Speaker Name]/
+│       │   ├── photo.png
+│       │   └── talk.pdf
+│       └── seminars.json
 └── README.md              # File này
 ```
 
@@ -94,11 +113,73 @@ npx http-server
 
 Sau đó truy cập: `http://localhost:8000`
 
+## 🎓 Quản lý Seminar Page
+
+### Thêm Seminar Mới
+
+1. **Tạo thư mục cho diễn giả** trong `seminars/upcoming/` hoặc `seminars/past/`:
+   ```
+   seminars/upcoming/[Tên Diễn Giả]/
+   ├── photo.png (hoặc .jpg)
+   └── talk_info.pdf
+   ```
+
+2. **Yêu cầu tạo JSON entry**:
+   - Nói với Claude Code: "Thêm diễn giả [Tên] vào upcoming/past"
+   - Claude sẽ đọc PDF và tạo JSON entry tự động
+
+3. **Review và chỉnh sửa** `seminars.json` nếu cần
+
+### Cấu trúc JSON Entry
+
+```json
+{
+  "id": "speaker-name-2024",
+  "speaker": {
+    "name": "Dr. Speaker Name",
+    "title": "Position",
+    "affiliation": "University/Institution",
+    "website": "https://...",
+    "photo": "seminars/upcoming/Speaker Name/photo.png",
+    "bio": "Speaker biography..."
+  },
+  "title": "Talk Title",
+  "type": "Online Lecture",
+  "series": {
+    "isSeries": true,
+    "totalTalks": 3,
+    "talks": [
+      {
+        "number": 1,
+        "date": "2024-10-15",
+        "time": "9:00-10:30",
+        "status": "fixed"
+      }
+    ]
+  },
+  "zoom": {
+    "url": "https://zoom.us/...",
+    "meetingId": "123 456 7890",
+    "passcode": "password"
+  },
+  "abstract": "Talk abstract...",
+  "pdfPath": "seminars/upcoming/Speaker Name/talk.pdf"
+}
+```
+
+### Move Seminar từ Upcoming sang Past
+
+1. Di chuyển thư mục diễn giả từ `seminars/upcoming/` sang `seminars/past/`
+2. Move JSON entry từ `upcoming/seminars.json` sang `past/seminars.json`
+3. Cập nhật thông tin: thêm `youtube` URL, `date`, `time`
+
 ## 📝 Ghi chú
 
 - Tất cả các vị trí cần thay đổi đều được đánh dấu bằng comment `<!-- TODO: ... -->`
 - Website responsive, hoạt động tốt trên mobile và desktop
 - Sử dụng vanilla HTML/CSS/JS, không cần build process
+- Hỗ trợ đa ngôn ngữ (English/Japanese)
+- Seminar page tự động load từ JSON files
 
 ## 📄 License
 
