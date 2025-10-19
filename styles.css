@@ -1378,6 +1378,16 @@ body {
 
 .sponsor-logo {
     margin-bottom: 1.5rem;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sponsor-logo img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 .logo-placeholder {

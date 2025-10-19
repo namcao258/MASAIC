@@ -423,15 +423,8 @@
                 dateDisplay = talks;
             }
 
-            // Zoom info
-            const zoomInfo = seminar.zoom ? `
-                <div class="zoom-info" style="margin-top: 10px; padding: 10px; background: #f5f5f5; border-radius: 5px;">
-                    <strong>${isEn ? 'Zoom Information:' : 'Zoom情報:'}</strong><br>
-                    <a href="${seminar.zoom.url}" target="_blank" class="pub-link" style="word-break: break-all;">🔗 ${isEn ? 'Join Zoom Meeting' : 'Zoomミーティングに参加'}</a><br>
-                    <small>Meeting ID: ${seminar.zoom.meetingId}<br>
-                    Passcode: ${seminar.zoom.passcode}</small>
-                </div>
-            ` : '';
+            // Zoom info - removed
+            const zoomInfo = '';
 
             // PDF link
             const pdfLink = seminar.pdfPath ? `
