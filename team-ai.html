@@ -48,11 +48,24 @@
     </nav>
 
     <!-- Team Header -->
-    <section class="team-header">
-        <div class="container">
-            <!-- TODO: Thay đổi tên và mô tả team ở đây -->
-            <h1>AI & LLM Integration Team</h1>
-            <p>Integrating large language models for intelligent decision-making and natural interaction</p>
+    <section class="team-header" style="position: relative; background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); min-height: 250px; overflow: hidden;">
+        <!-- Animated Gears Background (Compact) -->
+        <div class="gear gear-1" style="width: 60px; height: 60px; top: 10%; left: 5%;"></div>
+        <div class="gear gear-2" style="width: 80px; height: 80px; top: 60%; left: 10%;"></div>
+        <div class="gear gear-3" style="width: 50px; height: 50px; top: 30%; right: 8%;"></div>
+        <div class="gear gear-4" style="width: 70px; height: 70px; bottom: 15%; right: 5%;"></div>
+        <div class="gear gear-5" style="width: 45px; height: 45px; top: 50%; left: 50%;"></div>
+        <div class="gear gear-6" style="width: 55px; height: 55px; top: 20%; left: 30%;"></div>
+
+        <div class="container" style="position: relative; z-index: 1;">
+            <div data-lang-content="en">
+                <h1 style="color: #1a1a1a;">AI & LLM Integration Team</h1>
+                <p style="color: #4a4a4a; font-size: 1.1rem;">Integrating large language models for intelligent decision-making and natural interaction</p>
+            </div>
+            <div data-lang-content="ja" style="display: none;">
+                <h1 style="color: #1a1a1a;">AI・LLM統合チーム</h1>
+                <p style="color: #4a4a4a; font-size: 1.1rem;">インテリジェントな意思決定と自然な対話のための大規模言語モデルの統合</p>
+            </div>
         </div>
     </section>
 
@@ -60,9 +73,15 @@
     <section class="team-detail">
         <div class="container">
             <div class="team-content">
-                <a href="index.html#teams" class="back-link">← Back to Teams</a>
+                <div data-lang-content="en">
+                    <a href="index.html#teams" class="back-link">← Back to Teams</a>
+                </div>
+                <div data-lang-content="ja" style="display: none;">
+                    <a href="index.html#teams" class="back-link">← チームに戻る</a>
+                </div>
 
-                <!-- TODO: Thay đổi nội dung giới thiệu team ở đây -->
+                <!-- English Content -->
+                <div data-lang-content="en">
                 <h2>Overview</h2>
                 <p>
                     The AI & LLM Integration Team is at the forefront of incorporating cutting-edge large language
@@ -101,32 +120,81 @@
                     </div>
                 </div>
 
-                <!-- TODO: Thay đổi thông tin thành viên team ở đây -->
+                <!-- Team Members -->
                 <h2 style="margin-top: 3rem;">Team Members</h2>
-                <div class="members-grid">
-                    <div class="member-card">
-                        <h3>Dr. [Name]</h3>
-                        <span class="role">Principal Investigator</span>
-                        <p>Expert in AI and machine learning systems</p>
+
+                <!-- Professor Section (with bio) -->
+                <div style="display: flex; gap: 2rem; align-items: flex-start; margin-bottom: 3rem; padding: 1.5rem; background: #f8f9fa; border-radius: 8px;">
+                    <div style="flex-shrink: 0;">
+                        <img src="images/team-ai/members/Nguyen_Le_Minh_Professor.jpg" alt="Nguyen Le Minh" style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 4px solid #667eea;">
                     </div>
-                    <div class="member-card">
-                        <h3>[Name]</h3>
-                        <span class="role">Research Scientist</span>
-                        <p>Specializing in large language models</p>
-                    </div>
-                    <div class="member-card">
-                        <h3>[Name]</h3>
-                        <span class="role">PhD Student</span>
-                        <p>Focusing on multi-agent systems</p>
-                    </div>
-                    <div class="member-card">
-                        <h3>[Name]</h3>
-                        <span class="role">Research Assistant</span>
-                        <p>Working on NLP and task planning</p>
+                    <div style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.5rem;">Nguyen Le Minh</h3>
+                        <span class="role" style="color: #667eea; font-weight: 600;">Professor</span>
+                        <p style="margin-top: 1rem; line-height: 1.6; color: #4a4a4a;">
+                            [Thêm tiểu sử của Professor vào đây. Bao gồm học vấn, kinh nghiệm nghiên cứu, lĩnh vực chuyên môn, các công trình nổi bật, và những đóng góp quan trọng cho ngành...]
+                        </p>
                     </div>
                 </div>
 
                 <a href="index.html#teams" class="back-link" style="margin-top: 3rem;">← Back to Teams</a>
+                </div>
+
+                <!-- Japanese Content -->
+                <div data-lang-content="ja" style="display: none;">
+                <h2>概要</h2>
+                <p>
+                    AI・LLM統合チームは、最先端の大規模言語モデルをロボットシステムに組み込む最前線にいます。ロボットが自然言語を使用して理解、推論、コミュニケーションを行えるフレームワークを開発し、人間とロボットの協働をより直感的で効果的にしています。
+                </p>
+
+                <h2>研究重点</h2>
+                <p>
+                    私たちの研究は、高度な言語モデルとロボット制御システムの間のギャップを埋めることに焦点を当てています。LLMが複雑な指示を解釈し、タスクを計画し、リアルタイムのロボットアプリケーションでインテリジェントな決定を下すことを可能にする革新的なアーキテクチャを作成しています。
+                </p>
+
+                <div class="features-grid" style="margin-top: 2rem;">
+                    <div class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <h3>LLMアーキテクチャ</h3>
+                        <p>ロボットタスク理解のための言語モデルの最適化</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💬</div>
+                        <h3>自然言語処理</h3>
+                        <p>直感的な人間とロボットのコミュニケーションを実現</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>タスクプランニング</h3>
+                        <p>AI駆動の計画と意思決定システム</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔄</div>
+                        <h3>マルチエージェント調整</h3>
+                        <p>複雑なタスクのための複数のAIエージェントの調整</p>
+                    </div>
+                </div>
+
+                <!-- Team Members -->
+                <h2 style="margin-top: 3rem;">チームメンバー</h2>
+
+                <!-- Professor Section (with bio) -->
+                <div style="display: flex; gap: 2rem; align-items: flex-start; margin-bottom: 3rem; padding: 1.5rem; background: #f8f9fa; border-radius: 8px;">
+                    <div style="flex-shrink: 0;">
+                        <img src="images/team-ai/members/Nguyen_Le_Minh_Professor.jpg" alt="Nguyen Le Minh" style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 4px solid #667eea;">
+                    </div>
+                    <div style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.5rem;">Nguyen Le Minh</h3>
+                        <span class="role" style="color: #667eea; font-weight: 600;">教授</span>
+                        <p style="margin-top: 1rem; line-height: 1.6; color: #4a4a4a;">
+                            [教授の経歴をここに追加してください。学歴、研究経験、専門分野、主要な業績、分野への重要な貢献を含めてください...]
+                        </p>
+                    </div>
+                </div>
+
+                <a href="index.html#teams" class="back-link" style="margin-top: 3rem;">← チームに戻る</a>
+                </div>
+
             </div>
         </div>
     </section>

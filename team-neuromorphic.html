@@ -48,10 +48,24 @@
     </nav>
 
     <!-- Team Header -->
-    <section class="team-header">
-        <div class="container">
-            <h1>Neuromorphic Computing Team</h1>
-            <p>Brain-inspired computing architectures for energy-efficient and adaptive AI systems</p>
+    <section class="team-header" style="position: relative; background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); min-height: 250px; overflow: hidden;">
+        <!-- Animated Gears Background (Compact) -->
+        <div class="gear gear-1" style="width: 60px; height: 60px; top: 10%; left: 5%;"></div>
+        <div class="gear gear-2" style="width: 80px; height: 80px; top: 60%; left: 10%;"></div>
+        <div class="gear gear-3" style="width: 50px; height: 50px; top: 30%; right: 8%;"></div>
+        <div class="gear gear-4" style="width: 70px; height: 70px; bottom: 15%; right: 5%;"></div>
+        <div class="gear gear-5" style="width: 45px; height: 45px; top: 50%; left: 50%;"></div>
+        <div class="gear gear-6" style="width: 55px; height: 55px; top: 20%; left: 30%;"></div>
+
+        <div class="container" style="position: relative; z-index: 1;">
+            <div data-lang-content="en">
+                <h1 style="color: #1a1a1a;">Neuromorphic Computing Team</h1>
+                <p style="color: #4a4a4a; font-size: 1.1rem;">Brain-inspired computing architectures for energy-efficient and adaptive AI systems</p>
+            </div>
+            <div data-lang-content="ja" style="display: none;">
+                <h1 style="color: #1a1a1a;">ニューロモルフィックコンピューティングチーム</h1>
+                <p style="color: #4a4a4a; font-size: 1.1rem;">エネルギー効率的で適応的なAIシステムのための脳型コンピューティングアーキテクチャ</p>
+            </div>
         </div>
     </section>
 
@@ -59,8 +73,20 @@
     <section class="team-detail">
         <div class="container">
             <div class="team-content">
-                <a href="index.html#teams" class="back-link">← Back to Teams</a>
+                <div data-lang-content="en">
+                    <a href="index.html#teams" class="back-link">← Back to Teams</a>
+                </div>
+                <div data-lang-content="ja" style="display: none;">
+                    <a href="index.html#teams" class="back-link">← チームに戻る</a>
+                </div>
 
+                <!-- Team Representation Image -->
+                <div style="margin: 2rem 0; border-radius: 12px; overflow: hidden;">
+                    <img src="images/team-neuromorphic/representation/representation_ji.jpg" alt="Neuromorphic Computing Team" style="width: 100%; height: auto; display: block;">
+                </div>
+
+                <!-- English Content -->
+                <div data-lang-content="en">
                 <h2>Overview</h2>
                 <p>
                     The Neuromorphic Computing Team pioneers brain-inspired computing architectures that revolutionize
@@ -100,31 +126,81 @@
                     </div>
                 </div>
 
+                <!-- Team Members -->
                 <h2 style="margin-top: 3rem;">Team Members</h2>
-                <div class="members-grid">
-                    <div class="member-card">
-                        <h3>Dr. [Name]</h3>
-                        <span class="role">Principal Investigator</span>
-                        <p>Expert in neuromorphic computing and brain-inspired AI</p>
+
+                <!-- Associate Professor Section (with bio) -->
+                <div style="display: flex; gap: 2rem; align-items: flex-start; margin-bottom: 3rem; padding: 1.5rem; background: #f8f9fa; border-radius: 8px;">
+                    <div style="flex-shrink: 0;">
+                        <img src="images/team-neuromorphic/members/Ji_Yonghun_Associate_Professor.jpg" alt="Ji Yonghun" style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 4px solid #667eea;">
                     </div>
-                    <div class="member-card">
-                        <h3>[Name]</h3>
-                        <span class="role">Research Engineer</span>
-                        <p>Specializing in spiking neural networks and neuromorphic hardware</p>
-                    </div>
-                    <div class="member-card">
-                        <h3>[Name]</h3>
-                        <span class="role">PhD Student</span>
-                        <p>Focusing on event-based vision and processing</p>
-                    </div>
-                    <div class="member-card">
-                        <h3>[Name]</h3>
-                        <span class="role">Research Assistant</span>
-                        <p>Working on bio-inspired learning algorithms</p>
+                    <div style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.5rem;">Ji Yonghun</h3>
+                        <span class="role" style="color: #667eea; font-weight: 600;">Associate Professor</span>
+                        <p style="margin-top: 1rem; line-height: 1.6; color: #4a4a4a;">
+                            [Thêm tiểu sử của Associate Professor vào đây. Bao gồm học vấn, kinh nghiệm nghiên cứu, lĩnh vực chuyên môn, các công trình nổi bật, và những đóng góp quan trọng cho ngành...]
+                        </p>
                     </div>
                 </div>
 
                 <a href="index.html#teams" class="back-link" style="margin-top: 3rem;">← Back to Teams</a>
+                </div>
+
+                <!-- Japanese Content -->
+                <div data-lang-content="ja" style="display: none;">
+                <h2>概要</h2>
+                <p>
+                    ニューロモルフィックコンピューティングチームは、ロボットの情報処理方法を革新する脳型コンピューティングアーキテクチャの先駆者です。生物学的ニューラルネットワークの構造と機能を模倣することで、動的環境でリアルタイム学習と意思決定が可能なエネルギー効率的で適応的なシステムを開発しています。
+                </p>
+
+                <h2>研究重点</h2>
+                <p>
+                    私たちの研究は、スパイキングニューラルネットワーク（SNN）、ニューロモルフィックハードウェア統合、イベントベースセンシング、生物学的に触発された学習アルゴリズムにわたります。生物学的脳の効率性と現代のコンピューティングのスケーラビリティを組み合わせた計算モデルの開発に焦点を当て、低消費電力を維持しながらロボットが認知能力を実現できるようにしています。
+                </p>
+
+                <div class="features-grid" style="margin-top: 2rem;">
+                    <div class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <h3>スパイキングニューラルネットワーク</h3>
+                        <p>スパイクベースの情報処理を使用した生物学的に触発されたニューラル計算</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>エネルギー効率</h3>
+                        <p>持続可能なロボットシステムのための超低消費電力</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔄</div>
+                        <h3>オンライン学習</h3>
+                        <p>動的環境でのリアルタイム適応と学習</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📡</div>
+                        <h3>イベントベース処理</h3>
+                        <p>生物学的視覚に触発された非同期データ処理</p>
+                    </div>
+                </div>
+
+                <!-- Team Members -->
+                <h2 style="margin-top: 3rem;">チームメンバー</h2>
+
+                <!-- Associate Professor Section (with bio) -->
+                <div style="display: flex; gap: 2rem; align-items: flex-start; margin-bottom: 3rem; padding: 1.5rem; background: #f8f9fa; border-radius: 8px;">
+                    <div style="flex-shrink: 0;">
+                        <img src="images/team-neuromorphic/members/Ji_Yonghun_Associate_Professor.jpg" alt="Ji Yonghun" style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 4px solid #667eea;">
+                    </div>
+                    <div style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.5rem;">Ji Yonghun</h3>
+                        <span class="role" style="color: #667eea; font-weight: 600;">准教授</span>
+                        <p style="margin-top: 1rem; line-height: 1.6; color: #4a4a4a;">
+                            [准教授の経歴をここに追加してください。学歴、研究経験、専門分野、主要な業績、分野への重要な貢献を含めてください...]
+                        </p>
+                    </div>
+                </div>
+
+                <a href="index.html#teams" class="back-link" style="margin-top: 3rem;">← チームに戻る</a>
+                </div>
+
             </div>
         </div>
     </section>

@@ -48,11 +48,24 @@
     </nav>
 
     <!-- Team Header -->
-    <section class="team-header">
-        <div class="container">
-            <!-- TODO: Thay đổi tên và mô tả team ở đây -->
-            <h1>Robotics & Control Team</h1>
-            <p>Developing advanced robotic platforms and control systems for intelligent automation</p>
+    <section class="team-header" style="position: relative; background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); min-height: 250px; overflow: hidden;">
+        <!-- Animated Gears Background (Compact) -->
+        <div class="gear gear-1" style="width: 60px; height: 60px; top: 10%; left: 5%;"></div>
+        <div class="gear gear-2" style="width: 80px; height: 80px; top: 60%; left: 10%;"></div>
+        <div class="gear gear-3" style="width: 50px; height: 50px; top: 30%; right: 8%;"></div>
+        <div class="gear gear-4" style="width: 70px; height: 70px; bottom: 15%; right: 5%;"></div>
+        <div class="gear gear-5" style="width: 45px; height: 45px; top: 50%; left: 50%;"></div>
+        <div class="gear gear-6" style="width: 55px; height: 55px; top: 20%; left: 30%;"></div>
+
+        <div class="container" style="position: relative; z-index: 1;">
+            <div data-lang-content="en">
+                <h1 style="color: #1a1a1a;">Robotics & Control Team</h1>
+                <p style="color: #4a4a4a; font-size: 1.1rem;">Developing advanced robotic platforms and control systems for intelligent automation</p>
+            </div>
+            <div data-lang-content="ja" style="display: none;">
+                <h1 style="color: #1a1a1a;">ロボティクス・制御チーム</h1>
+                <p style="color: #4a4a4a; font-size: 1.1rem;">インテリジェント自動化のための高度なロボットプラットフォームと制御システムの開発</p>
+            </div>
         </div>
     </section>
 
@@ -60,9 +73,20 @@
     <section class="team-detail">
         <div class="container">
             <div class="team-content">
-                <a href="index.html#teams" class="back-link">← Back to Teams</a>
+                <div data-lang-content="en">
+                    <a href="index.html#teams" class="back-link">← Back to Teams</a>
+                </div>
+                <div data-lang-content="ja" style="display: none;">
+                    <a href="index.html#teams" class="back-link">← チームに戻る</a>
+                </div>
 
-                <!-- TODO: Thay đổi nội dung giới thiệu team ở đây -->
+                <!-- Team Representation Image -->
+                <div style="margin: 2rem 0; border-radius: 12px; overflow: hidden;">
+                    <img src="images/team-robotics/representation/representation.jpg" alt="Robotics & Control Team" style="width: 100%; height: auto; display: block;">
+                </div>
+
+                <!-- English Content -->
+                <div data-lang-content="en">
                 <h2>Overview</h2>
                 <p>
                     The Robotics & Control Team focuses on designing and developing sophisticated robotic
@@ -102,32 +126,191 @@
                     </div>
                 </div>
 
-                <!-- TODO: Thay đổi thông tin thành viên team ở đây -->
+                <!-- Team Members -->
                 <h2 style="margin-top: 3rem;">Team Members</h2>
-                <div class="members-grid">
-                    <div class="member-card">
-                        <h3>Dr. [Name]</h3>
-                        <span class="role">Principal Investigator</span>
-                        <p>Expert in robotic systems and control theory</p>
+
+                <!-- Professor Section (with bio) -->
+                <div style="display: flex; gap: 2rem; align-items: flex-start; margin-bottom: 3rem; padding: 1.5rem; background: #f8f9fa; border-radius: 8px;">
+                    <div style="flex-shrink: 0;">
+                        <img src="images/team-robotics/members/Ho_Anh_Van_Professor.jpg" alt="Ho Anh Van" style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 4px solid #667eea;">
                     </div>
-                    <div class="member-card">
-                        <h3>[Name]</h3>
-                        <span class="role">Research Engineer</span>
-                        <p>Specializing in motion planning and control</p>
+                    <div style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.5rem;">Ho Anh Van</h3>
+                        <span class="role" style="color: #667eea; font-weight: 600;">Professor</span>
+                        <p style="margin-top: 1rem; line-height: 1.6; color: #4a4a4a;">
+                            [Thêm tiểu sử của Professor vào đây. Bao gồm học vấn, kinh nghiệm nghiên cứu, lĩnh vực chuyên môn, các công trình nổi bật, và những đóng góp quan trọng cho ngành...]
+                        </p>
                     </div>
+                </div>
+
+                <!-- Associate Professor Section -->
+                <div class="members-grid" style="margin-bottom: 3rem;">
                     <div class="member-card">
-                        <h3>[Name]</h3>
+                        <img src="images/team-robotics/members/Okeyoshi_Kosuke_Associate_Professor.jpg" alt="Okeyoshi Kosuke" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
+                        <h3>Okeyoshi Kosuke</h3>
+                        <span class="role">Associate Professor</span>
+                    </div>
+                </div>
+
+                <!-- Assistant Professor Section -->
+                <div class="members-grid" style="margin-bottom: 3rem;">
+                    <div class="member-card">
+                        <img src="images/team-robotics/members/Nguyen_Huu_Nhan_Assistant_Professor.png" alt="Nguyen Huu Nhan" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
+                        <h3>Nguyen Huu Nhan</h3>
+                        <span class="role">Assistant Professor</span>
+                    </div>
+                </div>
+
+                <!-- Doctor Section -->
+                <div class="members-grid" style="margin-bottom: 3rem;">
+                    <div class="member-card">
+                        <img src="images/team-robotics/members/Luu_Khanh_Quan_Doctor.jpg" alt="Luu Khanh Quan" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
+                        <h3>Luu Khanh Quan</h3>
+                        <span class="role">Doctor</span>
+                    </div>
+                </div>
+
+                <!-- PhD Students Section -->
+                <div class="members-grid" style="margin-bottom: 3rem;">
+                    <div class="member-card">
+                        <img src="images/team-robotics/members/Dam_Phuong_Nam_PhD_Student.jpg" alt="Dam Phuong Nam" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
+                        <h3>Dam Phuong Nam</h3>
                         <span class="role">PhD Student</span>
-                        <p>Focusing on sensor integration and hardware design</p>
                     </div>
                     <div class="member-card">
-                        <h3>[Name]</h3>
-                        <span class="role">Research Assistant</span>
-                        <p>Working on real-time control systems</p>
+                        <img src="images/team-robotics/members/Nguyen_Duy_Long_PhD_Student.jpg" alt="Nguyen Duy Long" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
+                        <h3>Nguyen Duy Long</h3>
+                        <span class="role">PhD Student</span>
+                    </div>
+                    <div class="member-card">
+                        <img src="images/team-robotics/members/Nguyen_Tai_Tuan_PhD_Student.jpg" alt="Nguyen Tai Tuan" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
+                        <h3>Nguyen Tai Tuan</h3>
+                        <span class="role">PhD Student</span>
+                    </div>
+                </div>
+
+                <!-- Master Students Section -->
+                <div class="members-grid" style="margin-bottom: 3rem;">
+                    <div class="member-card">
+                        <img src="images/team-robotics/members/Duong_Van_Tan_Master_Student.png" alt="Duong Van Tan" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
+                        <h3>Duong Van Tan</h3>
+                        <span class="role">Master Student</span>
                     </div>
                 </div>
 
                 <a href="index.html#teams" class="back-link" style="margin-top: 3rem;">← Back to Teams</a>
+                </div>
+
+                <!-- Japanese Content -->
+                <div data-lang-content="ja" style="display: none;">
+                <h2>概要</h2>
+                <p>
+                    ロボティクス・制御チームは、AIシステムの物理的基盤となる高度なロボットプラットフォームの設計・開発に注力しています。多様な環境で動作可能な、汎用性、堅牢性、知能を備えたロボットの創造に取り組んでいます。
+                </p>
+
+                <h2>研究重点</h2>
+                <p>
+                    私たちの研究は、高度なモーション制御、軌道計画、センサー統合、リアルタイムシステム最適化など、いくつかの主要分野を網羅しています。ロボットが精度と信頼性を維持しながら、環境とシームレスに相互作用できるハードウェアとソフトウェアの両方のソリューションを開発しています。
+                </p>
+
+                <div class="features-grid" style="margin-top: 2rem;">
+                    <div class="feature-card">
+                        <div class="feature-icon">⚙️</div>
+                        <h3>モーション制御</h3>
+                        <p>精密なロボット動作と操作のための高度なアルゴリズム</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>経路計画</h3>
+                        <p>効率的なタスク実行のためのインテリジェントな軌道最適化</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔧</div>
+                        <h3>ハードウェア設計</h3>
+                        <p>特定のアプリケーションに合わせたカスタムロボットプラットフォーム</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📡</div>
+                        <h3>センサーフュージョン</h3>
+                        <p>堅牢な認識のための複数のセンサー入力の統合</p>
+                    </div>
+                </div>
+
+                <!-- Team Members -->
+                <h2 style="margin-top: 3rem;">チームメンバー</h2>
+
+                <!-- Professor Section (with bio) -->
+                <div style="display: flex; gap: 2rem; align-items: flex-start; margin-bottom: 3rem; padding: 1.5rem; background: #f8f9fa; border-radius: 8px;">
+                    <div style="flex-shrink: 0;">
+                        <img src="images/team-robotics/members/Ho_Anh_Van_Professor.jpg" alt="Ho Anh Van" style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 4px solid #667eea;">
+                    </div>
+                    <div style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.5rem;">Ho Anh Van</h3>
+                        <span class="role" style="color: #667eea; font-weight: 600;">教授</span>
+                        <p style="margin-top: 1rem; line-height: 1.6; color: #4a4a4a;">
+                            [教授の経歴をここに追加してください。学歴、研究経験、専門分野、主要な業績、分野への重要な貢献を含めてください...]
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Associate Professor Section -->
+                <div class="members-grid" style="margin-bottom: 3rem;">
+                    <div class="member-card">
+                        <img src="images/team-robotics/members/Okeyoshi_Kosuke_Associate_Professor.jpg" alt="Okeyoshi Kosuke" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
+                        <h3>Okeyoshi Kosuke</h3>
+                        <span class="role">准教授</span>
+                    </div>
+                </div>
+
+                <!-- Assistant Professor Section -->
+                <div class="members-grid" style="margin-bottom: 3rem;">
+                    <div class="member-card">
+                        <img src="images/team-robotics/members/Nguyen_Huu_Nhan_Assistant_Professor.png" alt="Nguyen Huu Nhan" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
+                        <h3>Nguyen Huu Nhan</h3>
+                        <span class="role">助教</span>
+                    </div>
+                </div>
+
+                <!-- Doctor Section -->
+                <div class="members-grid" style="margin-bottom: 3rem;">
+                    <div class="member-card">
+                        <img src="images/team-robotics/members/Luu_Khanh_Quan_Doctor.jpg" alt="Luu Khanh Quan" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
+                        <h3>Luu Khanh Quan</h3>
+                        <span class="role">博士</span>
+                    </div>
+                </div>
+
+                <!-- PhD Students Section -->
+                <div class="members-grid" style="margin-bottom: 3rem;">
+                    <div class="member-card">
+                        <img src="images/team-robotics/members/Dam_Phuong_Nam_PhD_Student.jpg" alt="Dam Phuong Nam" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
+                        <h3>Dam Phuong Nam</h3>
+                        <span class="role">博士課程学生</span>
+                    </div>
+                    <div class="member-card">
+                        <img src="images/team-robotics/members/Nguyen_Duy_Long_PhD_Student.jpg" alt="Nguyen Duy Long" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
+                        <h3>Nguyen Duy Long</h3>
+                        <span class="role">博士課程学生</span>
+                    </div>
+                    <div class="member-card">
+                        <img src="images/team-robotics/members/Nguyen_Tai_Tuan_PhD_Student.jpg" alt="Nguyen Tai Tuan" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
+                        <h3>Nguyen Tai Tuan</h3>
+                        <span class="role">博士課程学生</span>
+                    </div>
+                </div>
+
+                <!-- Master Students Section -->
+                <div class="members-grid" style="margin-bottom: 3rem;">
+                    <div class="member-card">
+                        <img src="images/team-robotics/members/Duong_Van_Tan_Master_Student.png" alt="Duong Van Tan" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
+                        <h3>Duong Van Tan</h3>
+                        <span class="role">修士課程学生</span>
+                    </div>
+                </div>
+
+                <a href="index.html#teams" class="back-link" style="margin-top: 3rem;">← チームに戻る</a>
+                </div>
+
             </div>
         </div>
     </section>

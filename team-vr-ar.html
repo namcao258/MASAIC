@@ -48,10 +48,24 @@
     </nav>
 
     <!-- Team Header -->
-    <section class="team-header">
-        <div class="container">
-            <h1>VR/AR & Immersive Technologies Team</h1>
-            <p>Extended reality interfaces for intuitive robot control and human-robot collaboration</p>
+    <section class="team-header" style="position: relative; background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); min-height: 250px; overflow: hidden;">
+        <!-- Animated Gears Background (Compact) -->
+        <div class="gear gear-1" style="width: 60px; height: 60px; top: 10%; left: 5%;"></div>
+        <div class="gear gear-2" style="width: 80px; height: 80px; top: 60%; left: 10%;"></div>
+        <div class="gear gear-3" style="width: 50px; height: 50px; top: 30%; right: 8%;"></div>
+        <div class="gear gear-4" style="width: 70px; height: 70px; bottom: 15%; right: 5%;"></div>
+        <div class="gear gear-5" style="width: 45px; height: 45px; top: 50%; left: 50%;"></div>
+        <div class="gear gear-6" style="width: 55px; height: 55px; top: 20%; left: 30%;"></div>
+
+        <div class="container" style="position: relative; z-index: 1;">
+            <div data-lang-content="en">
+                <h1 style="color: #1a1a1a;">VR/AR & Immersive Technologies Team</h1>
+                <p style="color: #4a4a4a; font-size: 1.1rem;">Extended reality interfaces for intuitive robot control and human-robot collaboration</p>
+            </div>
+            <div data-lang-content="ja" style="display: none;">
+                <h1 style="color: #1a1a1a;">VR/AR・没入型技術チーム</h1>
+                <p style="color: #4a4a4a; font-size: 1.1rem;">直感的なロボット制御と人間とロボットの協働のための拡張現実インターフェース</p>
+            </div>
         </div>
     </section>
 
@@ -59,8 +73,15 @@
     <section class="team-detail">
         <div class="container">
             <div class="team-content">
-                <a href="index.html#teams" class="back-link">← Back to Teams</a>
+                <div data-lang-content="en">
+                    <a href="index.html#teams" class="back-link">← Back to Teams</a>
+                </div>
+                <div data-lang-content="ja" style="display: none;">
+                    <a href="index.html#teams" class="back-link">← チームに戻る</a>
+                </div>
 
+                <!-- English Content -->
+                <div data-lang-content="en">
                 <h2>Overview</h2>
                 <p>
                     The VR/AR & Immersive Technologies Team develops cutting-edge extended reality (XR) solutions
@@ -101,31 +122,81 @@
                     </div>
                 </div>
 
+                <!-- Team Members -->
                 <h2 style="margin-top: 3rem;">Team Members</h2>
-                <div class="members-grid">
-                    <div class="member-card">
-                        <h3>Dr. [Name]</h3>
-                        <span class="role">Principal Investigator</span>
-                        <p>Expert in XR technologies and human-robot interaction</p>
+
+                <!-- Professor Section (with bio) -->
+                <div style="display: flex; gap: 2rem; align-items: flex-start; margin-bottom: 3rem; padding: 1.5rem; background: #f8f9fa; border-radius: 8px;">
+                    <div style="flex-shrink: 0;">
+                        <img src="images/team-vr-ar/members/Xie_Professor.png" alt="Xie" style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 4px solid #667eea;">
                     </div>
-                    <div class="member-card">
-                        <h3>[Name]</h3>
-                        <span class="role">Research Engineer</span>
-                        <p>Specializing in VR/AR development and 3D interfaces</p>
-                    </div>
-                    <div class="member-card">
-                        <h3>[Name]</h3>
-                        <span class="role">PhD Student</span>
-                        <p>Focusing on haptic feedback and multimodal interaction</p>
-                    </div>
-                    <div class="member-card">
-                        <h3>[Name]</h3>
-                        <span class="role">Research Assistant</span>
-                        <p>Working on immersive simulation environments</p>
+                    <div style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.5rem;">Xie</h3>
+                        <span class="role" style="color: #667eea; font-weight: 600;">Professor</span>
+                        <p style="margin-top: 1rem; line-height: 1.6; color: #4a4a4a;">
+                            [Thêm tiểu sử của Professor vào đây. Bao gồm học vấn, kinh nghiệm nghiên cứu, lĩnh vực chuyên môn, các công trình nổi bật, và những đóng góp quan trọng cho ngành...]
+                        </p>
                     </div>
                 </div>
 
                 <a href="index.html#teams" class="back-link" style="margin-top: 3rem;">← Back to Teams</a>
+                </div>
+
+                <!-- Japanese Content -->
+                <div data-lang-content="ja" style="display: none;">
+                <h2>概要</h2>
+                <p>
+                    VR/AR・没入型技術チームは、人間とロボットシステムの間のギャップを埋める最先端の拡張現実（XR）ソリューションを開発しています。没入型インターフェースを通じて、仮想現実と複合現実環境の両方で、直感的なロボット遠隔操作、トレーニング、協働を可能にし、人間がインテリジェントマシンと相互作用し制御する方法を変革しています。
+                </p>
+
+                <h2>研究重点</h2>
+                <p>
+                    私たちの研究は、ロボット遠隔操作のための仮想現実（VR）、リアルタイムロボットステータス可視化のための拡張現実（AR）、複合現実トレーニング環境、ハプティックフィードバックシステム、没入型シミュレーションプラットフォームを網羅しています。状況認識を向上させ、認知負荷を軽減し、複雑なロボットシステムの自然で直感的な制御を可能にするシームレスなXR体験の創造に焦点を当てています。
+                </p>
+
+                <div class="features-grid" style="margin-top: 2rem;">
+                    <div class="feature-card">
+                        <div class="feature-icon">🥽</div>
+                        <h3>VR遠隔操作</h3>
+                        <p>直感的な遠隔ロボット制御のための没入型インターフェース</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">👓</div>
+                        <h3>AR可視化</h3>
+                        <p>ロボットデータと環境情報のリアルタイムオーバーレイ</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎮</div>
+                        <h3>ハプティックフィードバック</h3>
+                        <p>強化されたロボット相互作用のためのタッチベースインターフェース</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌐</div>
+                        <h3>デジタルツイン</h3>
+                        <p>シミュレーション、トレーニング、テストのための仮想レプリカ</p>
+                    </div>
+                </div>
+
+                <!-- Team Members -->
+                <h2 style="margin-top: 3rem;">チームメンバー</h2>
+
+                <!-- Professor Section (with bio) -->
+                <div style="display: flex; gap: 2rem; align-items: flex-start; margin-bottom: 3rem; padding: 1.5rem; background: #f8f9fa; border-radius: 8px;">
+                    <div style="flex-shrink: 0;">
+                        <img src="images/team-vr-ar/members/Xie_Professor.png" alt="Xie" style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 4px solid #667eea;">
+                    </div>
+                    <div style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.5rem;">Xie</h3>
+                        <span class="role" style="color: #667eea; font-weight: 600;">教授</span>
+                        <p style="margin-top: 1rem; line-height: 1.6; color: #4a4a4a;">
+                            [教授の経歴をここに追加してください。学歴、研究経験、専門分野、主要な業績、分野への重要な貢献を含めてください...]
+                        </p>
+                    </div>
+                </div>
+
+                <a href="index.html#teams" class="back-link" style="margin-top: 3rem;">← チームに戻る</a>
+                </div>
+
             </div>
         </div>
     </section>
