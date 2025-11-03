@@ -1,0 +1,9 @@
+Dr. She Yu is an Assistant Professor at Purdue University.
+
+Current Position:
+- Assistant Professor, School of Industrial Engineering, Purdue University
+
+Research Interests:
+Dr. Yu's research focuses on machine learning and intelligent systems. Her work encompasses the development of advanced algorithms and methodologies for intelligent decision-making systems, with applications in manufacturing, operations research, and automation.
+
+Her research contributes to advancing the field of intelligent systems through innovative approaches to machine learning and optimization.

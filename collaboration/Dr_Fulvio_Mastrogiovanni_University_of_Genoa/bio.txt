@@ -1,0 +1,9 @@
+Dr. Fulvio Mastrogiovanni is an Associate Professor at the University of Genoa, Italy.
+
+Current Position:
+- Associate Professor, University of Genoa
+
+Research Interests:
+Dr. Mastrogiovanni's research focuses on human-robot interaction and cognitive robotics. His work encompasses the development of intelligent robotic systems capable of understanding and responding to human behavior, with emphasis on cognitive architectures and interaction paradigms.
+
+His research contributes to advancing the field of robotics through innovative approaches to human-robot collaboration and intelligent system design.

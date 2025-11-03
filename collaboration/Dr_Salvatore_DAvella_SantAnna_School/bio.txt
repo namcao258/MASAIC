@@ -1,0 +1,15 @@
+Dr. Salvatore D'Avella is an Assistant Professor at the Sant'Anna School of Advanced Studies in Pisa, Italy.
+
+Educational Background:
+- Ph.D. in Emerging Digital Technologies (Perceptual Robotics curriculum), Sant'Anna School of Advanced Studies, 2023
+- M.S. in Embedded Computing Systems (cum laude), Sant'Anna School of Advanced Studies and University of Pisa, 2019
+- B.S. in Computer Engineering (cum laude), University of Pisa, 2016
+
+Research Interests:
+Dr. D'Avella's research focuses on computer vision and machine learning applications for Industry 4.0, with particular emphasis on robotic grasping and manipulation. His work encompasses human-robot interaction, multi-agent systems, and the development of intelligent robotic systems for industrial applications.
+
+Professional Experience:
+- Visiting Researcher at the German Aerospace Center (DLR) in Munich, Germany, 2022
+- Current position at Sant'Anna School of Advanced Studies, Pisa, Italy
+
+His research contributes to advancing autonomous robotic systems through the integration of advanced perception and learning capabilities.

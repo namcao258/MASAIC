@@ -1,0 +1,6 @@
+Name: Shan Luo
+Title: Professor
+Institution: King's College London
+Email: shan.luo@kcl.ac.uk
+Website: https://www.kcl.ac.uk/people/shan-luo
+Research Areas: Tactile Sensing, Robotic Manipulation

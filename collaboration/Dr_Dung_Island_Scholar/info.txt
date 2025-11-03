@@ -1,0 +1,6 @@
+Name: Trung Dung Ngo
+Title: Professor
+Institution: University of Prince Edward Island (UPEI)
+Email:
+Website: https://islandscholar.ca/people/tngo
+Research Areas: Multi-Robot Systems, Modular Robotics, Human-Robot Cooperation, Industrial Automation

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>International Collaboration - MASAIC</title>
+    <title>Collaboration - MASAIC</title>
     <link rel="stylesheet" href="styles.css">
     <script>
         // Initialize language early to prevent content flash
@@ -24,8 +24,8 @@
 
                 // Set active button immediately on load
                 document.querySelectorAll('.lang-btn').forEach(function(btn) {
-                    var btnText = btn.textContent.trim();
-                    if ((lang === 'en' && btnText === 'EN') || (lang === 'ja' && btnText === '日本語')) {
+                    var btnLang = btn.getAttribute('data-lang');
+                    if (btnLang === lang) {
                         btn.classList.add('active');
                     } else {
                         btn.classList.remove('active');
@@ -69,7 +69,7 @@
                     <img src="images/logo/CREST_logo.png" alt="CREST Logo" class="sponsor-logo crest-logo">
                 </div>
                 <div class="language-switcher">
-                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
                     <button class="lang-btn" data-lang="ja">日本語</button>
                 </div>
             </div>
@@ -80,122 +80,223 @@
     <section class="team-detail">
         <div class="container">
             <div class="team-content">
+
                 <!-- English Version -->
                 <div data-lang-content="en">
-                    <h2>Overview</h2>
-                    <p>
-                        The MASAIC project actively collaborates with leading research institutions and universities
-                        around the world to advance the frontiers of robotics and artificial intelligence. Through
-                        these partnerships, we exchange knowledge, share resources, and work together on cutting-edge
-                        research projects.
-                    </p>
+                    <h2>Academic Collaborators</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">The MASAIC project collaborates with leading researchers from institutions around the world.</p>
 
-                    <h2>Partner Institutions</h2>
-
-                    <!-- Partners Grid -->
-                    <div class="members-grid">
-                        <div class="member-card">
-                            <div class="member-photo">🏛️</div>
-                            <h3>Partner University 1</h3>
-                            <span class="role">Academic Partnership</span>
-                            <p>Collaborative research in multi-agent systems and robotics</p>
+                    <div class="collaboration-grid">
+                        <!-- Dr. Trung Dung Ngo -->
+                        <div class="collaborator-card">
+                            <div class="collaborator-photo">
+                                <img src="collaboration/Dr_Dung_Island_Scholar/Trung Dung Ngo.png" alt="Trung Dung Ngo" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+                            </div>
+                            <div class="collaborator-info">
+                                <h3>Trung Dung Ngo</h3>
+                                <p class="collaborator-title">Professor</p>
+                                <div class="institution">
+                                    <img src="collaboration/Dr_Dung_Island_Scholar/University_of_Prince_Edward_Island.png" alt="UPEI Logo" style="max-width: 120px; height: auto;">
+                                    <p class="institution-name">University of Prince Edward Island</p>
+                                </div>
+                                <div class="collaboration-areas">
+                                    <strong>Research Areas:</strong><br>
+                                    Multi-Robot Systems, Modular Robotics, Human-Robot Cooperation, Industrial Automation
+                                </div>
+                                <a href="https://islandscholar.ca/people/tngo" target="_blank" class="collaborator-link">Visit Profile →</a>
+                            </div>
                         </div>
 
-                        <div class="member-card">
-                            <div class="member-photo">🏛️</div>
-                            <h3>Partner University 2</h3>
-                            <span class="role">Research Collaboration</span>
-                            <p>Joint projects in AI and machine learning</p>
+                        <!-- Dr. Shan Luo -->
+                        <div class="collaborator-card">
+                            <div class="collaborator-photo">
+                                <img src="collaboration/Dr_Shan_Luo_Kings_College/Shan_Luo.png" alt="Shan Luo" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+                            </div>
+                            <div class="collaborator-info">
+                                <h3>Shan Luo</h3>
+                                <p class="collaborator-title">Professor</p>
+                                <div class="institution">
+                                    <img src="collaboration/Dr_Shan_Luo_Kings_College/Kings_college_London.png" alt="King's College London Logo" style="max-width: 120px; height: auto;">
+                                    <p class="institution-name">King's College London</p>
+                                </div>
+                                <div class="collaboration-areas">
+                                    <strong>Research Areas:</strong><br>
+                                    Tactile Sensing, Robotic Manipulation
+                                </div>
+                                <a href="https://www.kcl.ac.uk/people/shan-luo" target="_blank" class="collaborator-link">Visit Profile →</a>
+                            </div>
                         </div>
 
-                        <div class="member-card">
-                            <div class="member-photo">🏛️</div>
-                            <h3>Partner University 3</h3>
-                            <span class="role">Exchange Program</span>
-                            <p>Student and researcher exchange initiatives</p>
+                        <!-- Dr. Fulvio Mastrogiovanni -->
+                        <div class="collaborator-card">
+                            <div class="collaborator-photo">
+                                <img src="collaboration/Dr_Fulvio_Mastrogiovanni_University_of_Genoa/Fulvio.jpg" alt="Fulvio Mastrogiovanni" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+                            </div>
+                            <div class="collaborator-info">
+                                <h3>Fulvio Mastrogiovanni</h3>
+                                <p class="collaborator-title">Associate Professor</p>
+                                <div class="institution">
+                                    <img src="collaboration/Dr_Fulvio_Mastrogiovanni_University_of_Genoa/logo_Genova.png" alt="University of Genoa Logo" style="max-width: 120px; height: auto;">
+                                    <p class="institution-name">University of Genoa</p>
+                                </div>
+                                <div class="collaboration-areas">
+                                    <strong>Research Areas:</strong><br>
+                                    Human-Robot Interaction, Cognitive Robotics
+                                </div>
+                                <a href="https://rubrica.unige.it/personale/UkNHWFhr" target="_blank" class="collaborator-link">Visit Profile →</a>
+                            </div>
                         </div>
 
-                        <div class="member-card">
-                            <div class="member-photo">🏛️</div>
-                            <h3>Partner Institution 4</h3>
-                            <span class="role">Industry Partnership</span>
-                            <p>Applied research and technology transfer</p>
+                        <!-- Dr. Salvatore D'Avella -->
+                        <div class="collaborator-card">
+                            <div class="collaborator-photo">
+                                <img src="collaboration/Dr_Salvatore_DAvella_SantAnna_School/images.jpg" alt="Salvatore D'Avella" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+                            </div>
+                            <div class="collaborator-info">
+                                <h3>Salvatore D'Avella</h3>
+                                <p class="collaborator-title">Assistant Professor</p>
+                                <div class="institution">
+                                    <img src="collaboration/Dr_Salvatore_DAvella_SantAnna_School/logo_Sant'Anna.png" alt="Sant'Anna School Logo" style="max-width: 120px; height: auto;">
+                                    <p class="institution-name">Sant'Anna School of Advanced Studies</p>
+                                </div>
+                                <div class="collaboration-areas">
+                                    <strong>Research Areas:</strong><br>
+                                    Computer Vision, Machine Learning, Industry 4.0, Robotic Grasping and Manipulation
+                                </div>
+                                <a href="https://loop.frontiersin.org/people/1979060/overview" target="_blank" class="collaborator-link">Visit Profile →</a>
+                            </div>
+                        </div>
+
+                        <!-- Dr. She Yu -->
+                        <div class="collaborator-card">
+                            <div class="collaborator-photo">
+                                <img src="collaboration/Dr_She_Yu_Purdue_University/Yu She.jpg" alt="She Yu" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+                            </div>
+                            <div class="collaborator-info">
+                                <h3>She Yu</h3>
+                                <p class="collaborator-title">Assistant Professor</p>
+                                <div class="institution">
+                                    <img src="collaboration/Dr_She_Yu_Purdue_University/logo_purdue.png" alt="Purdue University Logo" style="max-width: 120px; height: auto;">
+                                    <p class="institution-name">Purdue University</p>
+                                </div>
+                                <div class="collaboration-areas">
+                                    <strong>Research Areas:</strong><br>
+                                    Machine Learning, Intelligent Systems
+                                </div>
+                                <a href="https://engineering.purdue.edu/IE/people/ptProfile?resource_id=256650" target="_blank" class="collaborator-link">Visit Profile →</a>
+                            </div>
                         </div>
                     </div>
-
-                    <h2>Collaboration Activities</h2>
-                    <div class="about-content">
-                        <p><strong>Joint Research Projects:</strong> Collaborative research on advanced topics in robotics, AI, and multi-agent systems</p>
-                        <p><strong>Academic Exchange:</strong> Student and researcher exchange programs to foster international cooperation</p>
-                        <p><strong>Workshops & Conferences:</strong> Joint organization of international workshops and conferences</p>
-                        <p><strong>Publications:</strong> Co-authored papers and joint publications in leading journals and conferences</p>
-                    </div>
-
-                    <h2>Contact for Collaboration</h2>
-                    <p>
-                        If you are interested in collaborating with the MASAIC project, please contact us at
-                        <a href="mailto:van-ho@jaist.ac.jp">van-ho@jaist.ac.jp</a>
-                    </p>
                 </div>
 
                 <!-- Japanese Version -->
                 <div data-lang-content="ja" style="display: none;">
-                    <h2>概要</h2>
-                    <p>
-                        MASAICプロジェクトは、世界中の主要な研究機関や大学と積極的に協力し、
-                        ロボティクスと人工知能の最前線を推進しています。これらのパートナーシップを通じて、
-                        知識を交換し、リソースを共有し、最先端の研究プロジェクトに共同で取り組んでいます。
-                    </p>
+                    <h2>学術協力者</h2>
+                    <p style="margin-bottom: 2rem; color: #666;">MASAICプロジェクトは、世界中の機関の主要研究者と協力しています。</p>
 
-                    <h2>パートナー機関</h2>
-
-                    <!-- Partners Grid -->
-                    <div class="members-grid">
-                        <div class="member-card">
-                            <div class="member-photo">🏛️</div>
-                            <h3>パートナー大学1</h3>
-                            <span class="role">学術パートナーシップ</span>
-                            <p>マルチエージェントシステムとロボティクスの共同研究</p>
+                    <div class="collaboration-grid">
+                        <!-- Dr. Trung Dung Ngo -->
+                        <div class="collaborator-card">
+                            <div class="collaborator-photo">
+                                <img src="collaboration/Dr_Dung_Island_Scholar/Trung Dung Ngo.png" alt="Trung Dung Ngo" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+                            </div>
+                            <div class="collaborator-info">
+                                <h3>Trung Dung Ngo</h3>
+                                <p class="collaborator-title">教授</p>
+                                <div class="institution">
+                                    <img src="collaboration/Dr_Dung_Island_Scholar/University_of_Prince_Edward_Island.png" alt="UPEI Logo" style="max-width: 120px; height: auto;">
+                                    <p class="institution-name">プリンスエドワードアイランド大学</p>
+                                </div>
+                                <div class="collaboration-areas">
+                                    <strong>研究分野：</strong><br>
+                                    マルチロボットシステム、モジュラーロボティクス、人間ロボット協調、産業オートメーション
+                                </div>
+                                <a href="https://islandscholar.ca/people/tngo" target="_blank" class="collaborator-link">プロフィールへ →</a>
+                            </div>
                         </div>
 
-                        <div class="member-card">
-                            <div class="member-photo">🏛️</div>
-                            <h3>パートナー大学2</h3>
-                            <span class="role">研究協力</span>
-                            <p>AIと機械学習の共同プロジェクト</p>
+                        <!-- Dr. Shan Luo -->
+                        <div class="collaborator-card">
+                            <div class="collaborator-photo">
+                                <img src="collaboration/Dr_Shan_Luo_Kings_College/Shan_Luo.png" alt="Shan Luo" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+                            </div>
+                            <div class="collaborator-info">
+                                <h3>Shan Luo</h3>
+                                <p class="collaborator-title">教授</p>
+                                <div class="institution">
+                                    <img src="collaboration/Dr_Shan_Luo_Kings_College/Kings_college_London.png" alt="King's College London Logo" style="max-width: 120px; height: auto;">
+                                    <p class="institution-name">キングス・カレッジ・ロンドン</p>
+                                </div>
+                                <div class="collaboration-areas">
+                                    <strong>研究分野：</strong><br>
+                                    触覚センシング、ロボット操作
+                                </div>
+                                <a href="https://www.kcl.ac.uk/people/shan-luo" target="_blank" class="collaborator-link">プロフィールへ →</a>
+                            </div>
                         </div>
 
-                        <div class="member-card">
-                            <div class="member-photo">🏛️</div>
-                            <h3>パートナー大学3</h3>
-                            <span class="role">交流プログラム</span>
-                            <p>学生と研究者の交流イニシアチブ</p>
+                        <!-- Dr. Fulvio Mastrogiovanni -->
+                        <div class="collaborator-card">
+                            <div class="collaborator-photo">
+                                <img src="collaboration/Dr_Fulvio_Mastrogiovanni_University_of_Genoa/Fulvio.jpg" alt="Fulvio Mastrogiovanni" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+                            </div>
+                            <div class="collaborator-info">
+                                <h3>Fulvio Mastrogiovanni</h3>
+                                <p class="collaborator-title">准教授</p>
+                                <div class="institution">
+                                    <img src="collaboration/Dr_Fulvio_Mastrogiovanni_University_of_Genoa/logo_Genova.png" alt="University of Genoa Logo" style="max-width: 120px; height: auto;">
+                                    <p class="institution-name">ジェノバ大学</p>
+                                </div>
+                                <div class="collaboration-areas">
+                                    <strong>研究分野：</strong><br>
+                                    人間ロボットインタラクション、認知ロボティクス
+                                </div>
+                                <a href="https://rubrica.unige.it/personale/UkNHWFhr" target="_blank" class="collaborator-link">プロフィールへ →</a>
+                            </div>
                         </div>
 
-                        <div class="member-card">
-                            <div class="member-photo">🏛️</div>
-                            <h3>パートナー機関4</h3>
-                            <span class="role">産業パートナーシップ</span>
-                            <p>応用研究と技術移転</p>
+                        <!-- Dr. Salvatore D'Avella -->
+                        <div class="collaborator-card">
+                            <div class="collaborator-photo">
+                                <img src="collaboration/Dr_Salvatore_DAvella_SantAnna_School/images.jpg" alt="Salvatore D'Avella" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+                            </div>
+                            <div class="collaborator-info">
+                                <h3>Salvatore D'Avella</h3>
+                                <p class="collaborator-title">助教</p>
+                                <div class="institution">
+                                    <img src="collaboration/Dr_Salvatore_DAvella_SantAnna_School/logo_Sant'Anna.png" alt="Sant'Anna School Logo" style="max-width: 120px; height: auto;">
+                                    <p class="institution-name">サンタンナ高等研究大学院大学</p>
+                                </div>
+                                <div class="collaboration-areas">
+                                    <strong>研究分野：</strong><br>
+                                    コンピュータビジョン、機械学習、インダストリー4.0、ロボット把持と操作
+                                </div>
+                                <a href="https://loop.frontiersin.org/people/1979060/overview" target="_blank" class="collaborator-link">プロフィールへ →</a>
+                            </div>
+                        </div>
+
+                        <!-- Dr. She Yu -->
+                        <div class="collaborator-card">
+                            <div class="collaborator-photo">
+                                <img src="collaboration/Dr_She_Yu_Purdue_University/Yu She.jpg" alt="She Yu" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+                            </div>
+                            <div class="collaborator-info">
+                                <h3>She Yu</h3>
+                                <p class="collaborator-title">助教</p>
+                                <div class="institution">
+                                    <img src="collaboration/Dr_She_Yu_Purdue_University/logo_purdue.png" alt="Purdue University Logo" style="max-width: 120px; height: auto;">
+                                    <p class="institution-name">パデュー大学</p>
+                                </div>
+                                <div class="collaboration-areas">
+                                    <strong>研究分野：</strong><br>
+                                    機械学習、インテリジェントシステム
+                                </div>
+                                <a href="https://engineering.purdue.edu/IE/people/ptProfile?resource_id=256650" target="_blank" class="collaborator-link">プロフィールへ →</a>
+                            </div>
                         </div>
                     </div>
-
-                    <h2>連携活動</h2>
-                    <div class="about-content">
-                        <p><strong>共同研究プロジェクト:</strong> ロボティクス、AI、マルチエージェントシステムの高度なトピックに関する共同研究</p>
-                        <p><strong>学術交流:</strong> 国際協力を促進するための学生と研究者の交流プログラム</p>
-                        <p><strong>ワークショップ・会議:</strong> 国際ワークショップと会議の共同開催</p>
-                        <p><strong>出版物:</strong> 主要なジャーナルと会議での共著論文と共同出版</p>
-                    </div>
-
-                    <h2>連携のお問い合わせ</h2>
-                    <p>
-                        MASAICプロジェクトとの連携にご興味がある方は、
-                        <a href="mailto:van-ho@jaist.ac.jp">van-ho@jaist.ac.jp</a>までご連絡ください。
-                    </p>
                 </div>
 
-                <a href="index.html" class="back-link">← Back to Home</a>
             </div>
         </div>
     </section>

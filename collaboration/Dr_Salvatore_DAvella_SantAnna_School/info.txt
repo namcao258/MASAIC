@@ -1,0 +1,6 @@
+Name: Salvatore D'Avella
+Title: Assistant Professor
+Institution: Sant'Anna School of Advanced Studies, Pisa, Italy
+Email:
+Website: https://loop.frontiersin.org/people/1979060/overview
+Research Areas: Computer Vision, Machine Learning, Industry 4.0, Robotic Grasping and Manipulation, Human-Robot Interaction, Multi-Agent Systems

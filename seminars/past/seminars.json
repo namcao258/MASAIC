@@ -1,5 +1,23 @@
 [
   {
+    "id": "chiara-bartolozzi-2024-talk1",
+    "speaker": {
+      "name": "Dr. Chiara Bartolozzi",
+      "title": "Senior Tenured Researcher",
+      "affiliation": "Italian Institute of Technology (IIT)",
+      "website": "https://www.iit.it/people-details/-/people/chiara-bartolozzi",
+      "photo": "seminars/past/Chiara Bartolozzi/Chiara.png",
+      "bio": "Dr. Chiara Bartolozzi is a Senior Tenured Researcher at the Italian Institute of Technology, leading the Event-Driven Perception for Robotics group. She earned her degree in Engineering from the University of Genova and a Ph.D. in Neuroinformatics from ETH Zurich. Her research focuses on neuromorphic engineering approaches to robotics, particularly event-driven sensing and processing. She coordinated the H2020 MSCA-ETN 'NeuTouch' and FP7 FET 'eMorph' projects, and serves as Senior Editor for NPJ Robotics and IOP Neuromorphic Computing and Engineering."
+    },
+    "title": "Neuromorphic Engineering and Event-Driven Perception for Robotics",
+    "type": "Online Lecture",
+    "abstract": "This talk explores the application of neuromorphic engineering principles to robotics through event-driven sensing and processing paradigms. Dr. Bartolozzi will discuss how neuromorphic approaches enable more efficient and bio-inspired perception systems for autonomous robots, with particular emphasis on tactile sensing and event-based vision. The presentation will cover recent advances in the NeuTouch project and demonstrate how event-driven perception can transform robotic capabilities in real-world scenarios.",
+    "pdfPath": "seminars/past/Chiara Bartolozzi/Online Lecture- Dr Chiara Bartolozzi.pdf",
+    "youtube": "",
+    "date": "2024-10-28",
+    "time": "9:00-10:30 JST"
+  },
+  {
     "id": "quan-luu-2024-talk1",
     "speaker": {
       "name": "Dr. Quan Luu",

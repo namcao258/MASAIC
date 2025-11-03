@@ -1,0 +1,8 @@
+[Please add biography here]
+
+This file should contain detailed information about the researcher's:
+- Educational background
+- Current position and affiliations
+- Research interests and expertise
+- Notable achievements and publications
+- Professional memberships

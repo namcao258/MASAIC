@@ -1,0 +1,6 @@
+Name: She Yu
+Title: Assistant Professor
+Institution: Purdue University
+Email: 
+Website: https://engineering.purdue.edu/IE/people/ptProfile?resource_id=256650
+Research Areas: Machine Learning, Intelligent Systems
