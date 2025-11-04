@@ -14,6 +14,8 @@ const translations = {
         'nav.publications': 'Publications',
         'nav.news': 'News',
         'nav.schedule': 'Schedule',
+        'nav.seminar': 'Seminar',
+        'nav.collaboration': 'Collaboration',
         'nav.sponsors': 'Sponsors',
 
         // Common
@@ -32,6 +34,8 @@ const translations = {
         'nav.publications': '研究成果',
         'nav.news': 'ニュース',
         'nav.schedule': 'スケジュール',
+        'nav.seminar': 'セミナー',
+        'nav.collaboration': '共同研究',
         'nav.sponsors': 'スポンサー',
 
         // Common
