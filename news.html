@@ -40,15 +40,21 @@
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
-                <img src="images/logo/logo.png" alt="MASAIC Logo" class="brand-logo">
-                <div class="brand-text">
-                    <h1 class="brand-name">
-                        <span class="cross-x">CROSS-X</span>
-                        <span class="masaic-name">
-                            <span class="mas">MAS</span><span class="ai-red">AI</span><span class="c-black">C</span>
-                        </span>
-                    </h1>
-                    <p class="subtitle">Modular Soft Adaptive Intelligent Component</p>
+                <div class="brand-logo-text">
+                    <img src="images/logo/logo.png" alt="MASAIC Logo" class="brand-logo">
+                    <div class="brand-text">
+                        <h1 class="brand-name">
+                            <span class="cross-x">CROSS-X</span>
+                            <span class="masaic-name">
+                                <span class="mas">MAS</span><span class="ai-red">AI</span><span class="c-black">C</span>
+                            </span>
+                        </h1>
+                        <p class="subtitle">Modular Soft Adaptive Intelligent Component</p>
+                    </div>
+                </div>
+                <div class="language-switcher">
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="ja">日本語</button>
                 </div>
             </div>
             <ul class="nav-menu">
@@ -68,10 +74,11 @@
                     <img src="images/logo/JST_logo.png" alt="JST Logo" class="sponsor-logo">
                     <img src="images/logo/CREST_logo.png" alt="CREST Logo" class="sponsor-logo crest-logo">
                 </div>
-                <div class="language-switcher">
-                    <button class="lang-btn" data-lang="en">EN</button>
-                    <button class="lang-btn" data-lang="ja">日本語</button>
-                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </nav>
@@ -84,6 +91,31 @@
                 <div data-lang-content="en">
                     <h2>Recent News</h2>
                     <div class="news-grid">
+                        <div class="news-item">
+                            <div class="news-date">
+                                <span class="date-day">23</span>
+                                <span class="date-month">Oct 2025</span>
+                            </div>
+                            <div class="news-content">
+                                <span class="news-category">Conference</span>
+                                <h3>Two Research Papers Presented at IROS 2025</h3>
+                                <p style="text-align: justify;">
+                                    Our team is presenting two innovative papers at the IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2025) in Hangzhou. The presentations showcase our cutting-edge research in soft robotics and multimodal sensing technologies.
+                                </p>
+                                <p style="margin-top: 1rem;"><strong>Paper 1 (IEEE Robotics and Automation Letters):</strong><br>
+                                "ViZTaP: A Cross-Polarization Based Mechanism for Perception Transition in Tactile-Proximity Sensing with Applications to Soft Grippers"<br>
+                                <em>Session: WeB T3 – Soft Sensors and Actuators | Wednesday, 13:35 - 13:40</em>
+                                </p>
+                                <p style="margin-top: 0.5rem;"><strong>Paper 2 (IEEE Transaction on Robotics):</strong><br>
+                                "Terradynamics of Monolithic Soft Robot Driven by Vibration Mechanism"<br>
+                                <em>Session: WeC T22 – Mechanism Design 2 | Wednesday, 15:20</em>
+                                </p>
+                                <div style="margin-top: 1rem;">
+                                    <img src="news/IROS-2025/iros2025-papers.jpg" alt="IROS 2025 Papers Presentation" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                </div>
+                                <a href="https://x.com/lab_ho/status/1980090941240410119" class="read-more" target="_blank" style="margin-top: 1rem; display: inline-block;">View announcement on X →</a>
+                            </div>
+                        </div>
                         <div class="news-item">
                             <div class="news-date">
                                 <span class="date-day">22</span>
@@ -138,6 +170,31 @@
                 <div data-lang-content="ja" style="display: none;">
                     <h2>最新ニュース</h2>
                     <div class="news-grid">
+                        <div class="news-item">
+                            <div class="news-date">
+                                <span class="date-day">23</span>
+                                <span class="date-month">10月 2025</span>
+                            </div>
+                            <div class="news-content">
+                                <span class="news-category">学会発表</span>
+                                <h3>IROS 2025で2件の研究論文を発表</h3>
+                                <p style="text-align: justify;">
+                                    本チームは、杭州で開催されるIEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2025)において、2件の革新的な論文を発表します。これらの発表は、ソフトロボティクスとマルチモーダルセンシング技術における最先端の研究成果を紹介するものです。
+                                </p>
+                                <p style="margin-top: 1rem;"><strong>論文1 (IEEE Robotics and Automation Letters):</strong><br>
+                                「ViZTaP: A Cross-Polarization Based Mechanism for Perception Transition in Tactile-Proximity Sensing with Applications to Soft Grippers」<br>
+                                <em>セッション: WeB T3 – Soft Sensors and Actuators | 水曜日 13:35 - 13:40</em>
+                                </p>
+                                <p style="margin-top: 0.5rem;"><strong>論文2 (IEEE Transaction on Robotics):</strong><br>
+                                「Terradynamics of Monolithic Soft Robot Driven by Vibration Mechanism」<br>
+                                <em>セッション: WeC T22 – Mechanism Design 2 | 水曜日 15:20</em>
+                                </p>
+                                <div style="margin-top: 1rem;">
+                                    <img src="news/IROS-2025/iros2025-papers.jpg" alt="IROS 2025 Papers Presentation" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                </div>
+                                <a href="https://x.com/lab_ho/status/1980090941240410119" class="read-more" target="_blank" style="margin-top: 1rem; display: inline-block;">Xでの発表を見る →</a>
+                            </div>
+                        </div>
                         <div class="news-item">
                             <div class="news-date">
                                 <span class="date-day">22</span>
