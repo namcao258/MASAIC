@@ -5,6 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publications - MASAIC</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        // Initialize language early to prevent content flash
+        (function() {
+            var lang = localStorage.getItem('language') || 'en';
+            document.documentElement.setAttribute('lang', lang);
+
+            // Set initial visibility based on language
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelectorAll('[data-lang-content]').forEach(function(el) {
+                    var elementLang = el.getAttribute('data-lang-content');
+                    if (elementLang === lang) {
+                        el.style.display = '';
+                    } else {
+                        el.style.display = 'none';
+                    }
+                });
+
+                // Set active button immediately on load
+                document.querySelectorAll('.lang-btn').forEach(function(btn) {
+                    var btnLang = btn.getAttribute('data-lang');
+                    if (btnLang === lang) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+            });
+        })();
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -24,7 +53,7 @@
                     </div>
                 </a>
                 <div class="language-switcher">
-                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
                     <button class="lang-btn" data-lang="ja">日本語</button>
                 </div>
             </div>
@@ -59,18 +88,18 @@
         <div class="container">
             <div class="team-content">
 
+                <!-- English Version -->
                 <div data-lang-content="en">
-                <div style="text-align: center; padding: 4rem 2rem;">
-                    <h2 style="color: #667eea; font-size: 2rem; margin-bottom: 1rem;">Under Construction</h2>
-                    <p style="font-size: 1.2rem; color: #4a4a4a;">Publications will be updated soon.</p>
-                </div>
+                    <h2>Research Publications</h2>
+
+                    <div id="publications-container-en"></div>
                 </div>
 
+                <!-- Japanese Version -->
                 <div data-lang-content="ja" style="display: none;">
-                <div style="text-align: center; padding: 4rem 2rem;">
-                    <h2 style="color: #667eea; font-size: 2rem; margin-bottom: 1rem;">更新中</h2>
-                    <p style="font-size: 1.2rem; color: #4a4a4a;">出版物は近日中に更新されます。</p>
-                </div>
+                    <h2>研究論文</h2>
+
+                    <div id="publications-container-ja"></div>
                 </div>
 
             </div>
@@ -86,5 +115,97 @@
 
     <script src="i18n.js"></script>
     <script src="script.js"></script>
+    <script>
+        // Function to extract YouTube video ID from URL
+        function getYouTubeVideoId(url) {
+            if (!url) return null;
+            const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+            const match = url.match(regExp);
+            return (match && match[2].length === 11) ? match[2] : null;
+        }
+
+        // Function to load and display publications
+        async function loadPublications() {
+            const publicationsEn = document.getElementById('publications-container-en');
+            const publicationsJa = document.getElementById('publications-container-ja');
+
+            try {
+                // List of publication folders (you can add more folders here)
+                const publications = ['paper1', 'paper2']; // Add 'paper3', 'paper4', etc.
+
+                for (const pubFolder of publications) {
+                    try {
+                        const response = await fetch(`publication/${pubFolder}/info.json`);
+                        if (!response.ok) continue;
+
+                        const pub = await response.json();
+
+                        // Create publication card HTML
+                        const videoId = getYouTubeVideoId(pub.videoUrl);
+
+                        const pubCardHtml = `
+                            <div class="publication-card" style="margin-bottom: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                <h3 style="color: #667eea; margin-bottom: 1rem; font-size: 1.8rem;">${pub.title}</h3>
+
+                                <div style="margin-bottom: 1rem;">
+                                    <strong>Authors:</strong> ${pub.authors.join(', ')}
+                                </div>
+
+                                <div style="margin-bottom: 1rem;">
+                                    <strong>Published in:</strong> ${pub.venue} (${pub.year})
+                                </div>
+
+                                ${videoId ? `
+                                <div style="margin: 1.5rem 0;">
+                                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px;">
+                                        <iframe
+                                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                                            src="https://www.youtube.com/embed/${videoId}"
+                                            frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen>
+                                        </iframe>
+                                    </div>
+                                </div>
+                                ` : ''}
+
+                                <div style="margin-top: 1.5rem;">
+                                    ${pub.paperUrl ? `
+                                    <div style="margin-bottom: 0.5rem;">
+                                        <strong>📄 Paper:</strong> <a href="${pub.paperUrl}" target="_blank" style="color: #667eea; word-break: break-all; text-decoration: underline;">${pub.paperUrl}</a>
+                                    </div>` : ''}
+                                    ${pub.videoUrl ? `
+                                    <div style="margin-bottom: 0.5rem;">
+                                        <strong>🎥 Video:</strong> <a href="${pub.videoUrl}" target="_blank" style="color: #667eea; word-break: break-all; text-decoration: underline;">${pub.videoUrl}</a>
+                                    </div>` : ''}
+                                </div>
+                            </div>
+                        `;
+
+                        // Add to both English and Japanese containers
+                        publicationsEn.innerHTML += pubCardHtml;
+                        publicationsJa.innerHTML += pubCardHtml;
+
+                    } catch (error) {
+                        console.error(`Error loading publication ${pubFolder}:`, error);
+                    }
+                }
+
+                // If no publications loaded, show message
+                if (publicationsEn.innerHTML === '') {
+                    publicationsEn.innerHTML = '<p style="text-align: center; color: #999;">No publications available yet.</p>';
+                    publicationsJa.innerHTML = '<p style="text-align: center; color: #999;">まだ出版物がありません。</p>';
+                }
+
+            } catch (error) {
+                console.error('Error loading publications:', error);
+                publicationsEn.innerHTML = '<p style="text-align: center; color: #999;">Error loading publications.</p>';
+                publicationsJa.innerHTML = '<p style="text-align: center; color: #999;">出版物の読み込みエラー。</p>';
+            }
+        }
+
+        // Load publications when page loads
+        document.addEventListener('DOMContentLoaded', loadPublications);
+    </script>
 </body>
 </html>
