@@ -92,12 +92,32 @@
                 <div data-lang-content="en">
                     <h2>Research Publications</h2>
 
+                    <!-- Filter Buttons -->
+                    <div style="margin-bottom: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <button class="filter-btn active" data-filter="journal" style="padding: 0.75rem 1.5rem; border: 2px solid #667eea; background: #667eea; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s;">
+                            Journal Papers
+                        </button>
+                        <button class="filter-btn" data-filter="conference" style="padding: 0.75rem 1.5rem; border: 2px solid #667eea; background: white; color: #667eea; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s;">
+                            Conference Papers
+                        </button>
+                    </div>
+
                     <div id="publications-container-en"></div>
                 </div>
 
                 <!-- Japanese Version -->
                 <div data-lang-content="ja" style="display: none;">
                     <h2>研究論文</h2>
+
+                    <!-- Filter Buttons -->
+                    <div style="margin-bottom: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <button class="filter-btn-ja active" data-filter="journal" style="padding: 0.75rem 1.5rem; border: 2px solid #667eea; background: #667eea; color: white; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s;">
+                            ジャーナル論文
+                        </button>
+                        <button class="filter-btn-ja" data-filter="conference" style="padding: 0.75rem 1.5rem; border: 2px solid #667eea; background: white; color: #667eea; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s;">
+                            会議論文
+                        </button>
+                    </div>
 
                     <div id="publications-container-ja"></div>
                 </div>
@@ -131,68 +151,124 @@
 
             try {
                 // List of publication folders (you can add more folders here)
-                const publications = ['paper1', 'paper2']; // Add 'paper3', 'paper4', etc.
+                const publicationFolders = ['paper1', 'paper2']; // Add 'paper3', 'paper4', etc.
 
-                for (const pubFolder of publications) {
+                // Load all publications
+                const allPubs = [];
+                for (const pubFolder of publicationFolders) {
                     try {
                         const response = await fetch(`publication/${pubFolder}/info.json`);
                         if (!response.ok) continue;
-
                         const pub = await response.json();
-
-                        // Create publication card HTML
-                        const videoId = getYouTubeVideoId(pub.videoUrl);
-
-                        const pubCardHtml = `
-                            <div class="publication-card" style="margin-bottom: 3rem; padding: 2rem; background: #f8f9fa; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                                <h3 style="color: #667eea; margin-bottom: 1rem; font-size: 1.8rem;">${pub.title}</h3>
-
-                                <div style="margin-bottom: 1rem;">
-                                    <strong>Authors:</strong> ${pub.authors.join(', ')}
-                                </div>
-
-                                <div style="margin-bottom: 1rem;">
-                                    <strong>Published in:</strong> ${pub.venue} (${pub.year})
-                                </div>
-
-                                ${videoId ? `
-                                <div style="margin: 1.5rem 0;">
-                                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px;">
-                                        <iframe
-                                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-                                            src="https://www.youtube.com/embed/${videoId}"
-                                            frameborder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                            allowfullscreen>
-                                        </iframe>
-                                    </div>
-                                </div>
-                                ` : ''}
-
-                                <div style="margin-top: 1.5rem;">
-                                    ${pub.paperUrl ? `
-                                    <div style="margin-bottom: 0.5rem;">
-                                        <strong>📄 Paper:</strong> <a href="${pub.paperUrl}" target="_blank" style="color: #667eea; word-break: break-all; text-decoration: underline;">${pub.paperUrl}</a>
-                                    </div>` : ''}
-                                    ${pub.videoUrl ? `
-                                    <div style="margin-bottom: 0.5rem;">
-                                        <strong>🎥 Video:</strong> <a href="${pub.videoUrl}" target="_blank" style="color: #667eea; word-break: break-all; text-decoration: underline;">${pub.videoUrl}</a>
-                                    </div>` : ''}
-                                </div>
-                            </div>
-                        `;
-
-                        // Add to both English and Japanese containers
-                        publicationsEn.innerHTML += pubCardHtml;
-                        publicationsJa.innerHTML += pubCardHtml;
-
+                        allPubs.push(pub);
                     } catch (error) {
                         console.error(`Error loading publication ${pubFolder}:`, error);
                     }
                 }
 
-                // If no publications loaded, show message
-                if (publicationsEn.innerHTML === '') {
+                // Sort by year (newest first), then by month (newest first), then by type (journal first)
+                allPubs.sort((a, b) => {
+                    if (b.year !== a.year) return b.year - a.year;
+                    if (b.month !== a.month) return (b.month || 0) - (a.month || 0);
+                    if (a.type === 'journal' && b.type === 'conference') return -1;
+                    if (a.type === 'conference' && b.type === 'journal') return 1;
+                    return 0;
+                });
+
+                // Group publications by year and type
+                const groupedPubs = {};
+                allPubs.forEach(pub => {
+                    const year = pub.year;
+                    if (!groupedPubs[year]) {
+                        groupedPubs[year] = { journal: [], conference: [] };
+                    }
+                    if (pub.type === 'journal') {
+                        groupedPubs[year].journal.push(pub);
+                    } else if (pub.type === 'conference') {
+                        groupedPubs[year].conference.push(pub);
+                    }
+                });
+
+                // Generate HTML for each language
+                function generatePublicationsHTML(lang) {
+                    let html = '';
+                    const years = Object.keys(groupedPubs).sort((a, b) => b - a);
+
+                    years.forEach(year => {
+                        html += `<h2 style="margin-top: 3rem; margin-bottom: 1.5rem; color: #1a1a1a; border-bottom: 2px solid #667eea; padding-bottom: 0.5rem;">${year}</h2>`;
+
+                        // Journal section
+                        if (groupedPubs[year].journal.length > 0) {
+                            html += `<h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #667eea;">Journal Papers</h3>`;
+                            groupedPubs[year].journal.forEach(pub => {
+                                html += generatePubCard(pub);
+                            });
+                        }
+
+                        // Conference section
+                        if (groupedPubs[year].conference.length > 0) {
+                            html += `<h3 style="margin-top: 2rem; margin-bottom: 1rem; color: #667eea;">Conference Papers</h3>`;
+                            groupedPubs[year].conference.forEach(pub => {
+                                html += generatePubCard(pub);
+                            });
+                        }
+                    });
+
+                    return html;
+                }
+
+                function generatePubCard(pub) {
+                    const videoId = getYouTubeVideoId(pub.videoUrl);
+                    return `
+                        <div class="publication-card" style="margin-bottom: 2rem; padding: 2rem; background: #f8f9fa; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                            <h4 style="color: #667eea; margin-bottom: 1rem; font-size: 1.8rem;">${pub.title}</h4>
+
+                            <div style="margin-bottom: 1rem;">
+                                <strong>Authors:</strong> ${pub.authors.join(', ')}
+                            </div>
+
+                            <div style="margin-bottom: 1rem;">
+                                <strong>Published in:</strong> ${pub.venue} (${pub.year})
+                            </div>
+
+                            ${videoId ? `
+                            <div style="margin: 1.5rem 0;">
+                                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px;">
+                                    <iframe
+                                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                                        src="https://www.youtube.com/embed/${videoId}"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+                            </div>
+                            ` : ''}
+
+                            <div style="margin-top: 1.5rem;">
+                                ${pub.paperUrl ? `
+                                <div style="margin-bottom: 0.5rem;">
+                                    <strong>📄 Paper:</strong> <a href="${pub.paperUrl}" target="_blank" style="color: #667eea; word-break: break-all; text-decoration: underline;">${pub.paperUrl}</a>
+                                </div>` : ''}
+                                ${pub.videoUrl ? `
+                                <div style="margin-bottom: 0.5rem;">
+                                    <strong>🎥 Video:</strong> <a href="${pub.videoUrl}" target="_blank" style="color: #667eea; word-break: break-all; text-decoration: underline;">${pub.videoUrl}</a>
+                                </div>` : ''}
+                            </div>
+                        </div>
+                    `;
+                }
+
+                // Display publications
+                if (allPubs.length > 0) {
+                    publicationsEn.innerHTML = generatePublicationsHTML('en');
+                    publicationsJa.innerHTML = generatePublicationsHTML('ja');
+
+                    // Store for filtering
+                    window.allPublications = allPubs;
+                    window.groupedPublications = groupedPubs;
+                    window.generatePubCardFunc = generatePubCard;
+                } else {
                     publicationsEn.innerHTML = '<p style="text-align: center; color: #999;">No publications available yet.</p>';
                     publicationsJa.innerHTML = '<p style="text-align: center; color: #999;">まだ出版物がありません。</p>';
                 }
@@ -204,8 +280,96 @@
             }
         }
 
+        // Filter functionality
+        function setupFilters() {
+            // English filters
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const filter = this.dataset.filter;
+
+                    // Update active button
+                    document.querySelectorAll('.filter-btn').forEach(b => {
+                        b.classList.remove('active');
+                        b.style.background = 'white';
+                        b.style.color = '#667eea';
+                    });
+                    this.classList.add('active');
+                    this.style.background = '#667eea';
+                    this.style.color = 'white';
+
+                    // Filter publications
+                    filterPublications(filter, 'en');
+                });
+            });
+
+            // Japanese filters
+            document.querySelectorAll('.filter-btn-ja').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const filter = this.dataset.filter;
+
+                    // Update active button
+                    document.querySelectorAll('.filter-btn-ja').forEach(b => {
+                        b.classList.remove('active');
+                        b.style.background = 'white';
+                        b.style.color = '#667eea';
+                    });
+                    this.classList.add('active');
+                    this.style.background = '#667eea';
+                    this.style.color = 'white';
+
+                    // Filter publications
+                    filterPublications(filter, 'ja');
+                });
+            });
+        }
+
+        function filterPublications(filter, lang) {
+            const container = lang === 'en' ? document.getElementById('publications-container-en') : document.getElementById('publications-container-ja');
+
+            if (!window.groupedPublications) return;
+
+            const groupedPubs = window.groupedPublications;
+            const generatePubCard = window.generatePubCardFunc;
+            let html = '';
+            const years = Object.keys(groupedPubs).sort((a, b) => b - a);
+
+            years.forEach(year => {
+                let yearHtml = '';
+                let hasContent = false;
+
+                // Journal section
+                if (filter === 'journal' && groupedPubs[year].journal.length > 0) {
+                    groupedPubs[year].journal.forEach(pub => {
+                        yearHtml += generatePubCard(pub);
+                    });
+                    hasContent = true;
+                }
+
+                // Conference section
+                if (filter === 'conference' && groupedPubs[year].conference.length > 0) {
+                    groupedPubs[year].conference.forEach(pub => {
+                        yearHtml += generatePubCard(pub);
+                    });
+                    hasContent = true;
+                }
+
+                if (hasContent) {
+                    html += `<h2 style="margin-top: 3rem; margin-bottom: 1.5rem; color: #1a1a1a; border-bottom: 2px solid #667eea; padding-bottom: 0.5rem;">${year}</h2>`;
+                    html += yearHtml;
+                }
+            });
+
+            container.innerHTML = html || `<p style="text-align: center; color: #999;">${lang === 'en' ? 'No publications found.' : '該当する論文がありません。'}</p>`;
+        }
+
         // Load publications when page loads
-        document.addEventListener('DOMContentLoaded', loadPublications);
+        document.addEventListener('DOMContentLoaded', async function() {
+            await loadPublications();
+            setupFilters();
+            // Show journal papers by default
+            filterPublications('journal', 'en');
+            filterPublications('journal', 'ja');
+        });
     </script>
 </body>
 </html>
