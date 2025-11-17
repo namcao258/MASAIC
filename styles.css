@@ -1248,6 +1248,7 @@ body {
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
     color: var(--text-dark);
+    white-space: nowrap;
 }
 
 .member-card .role {
