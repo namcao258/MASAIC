@@ -1,46 +1,20 @@
 [
   {
-    "id": "quan-luu-2024-series",
+    "id": "vu-nhat-minh-2024",
     "speaker": {
-      "name": "Dr. Quan Luu",
-      "title": "Postdoctoral Researcher",
-      "affiliation": "Purdue University",
-      "website": "https://quan-luu.github.io",
-      "photo": "seminars/upcoming/Quan Luu/QuanLuu_photo.png",
-      "bio": "His research interests lie in creating soft and sensorized multimodal robotic bodies, especially those with a sense of touch, and leveraging them in robot learning and control systems. His work aims to enable robots to perform skilled and flexible manipulation, particularly in scenarios where contact and safe interaction with objects and surroundings are crucial."
+      "name": "Dr. Vu Nhat Minh",
+      "title": "Assistant Professor",
+      "affiliation": "College of Engineering and Computer Vision, VinUniversity, Vietnam",
+      "website": "https://scholar.google.com/citations?user=qyExc4QAAAAJ&hl=en",
+      "photo": "seminars/upcoming/Vu_Nhat_Minh/VuNhatMinh_photo.png",
+      "bio": ""
     },
-    "title": "Trends, Challenges, and Outlook in Robot Learning: Toward Safe and Generalizable Robots Through Multimodal Cross-Embodiment Learning",
-    "type": "Online Lecture",
-    "series": {
-      "isSeries": true,
-      "totalTalks": 3,
-      "talks": [
-        {
-          "number": 1,
-          "date": "2024-10-15",
-          "time": "9:00-10:30",
-          "status": "fixed"
-        },
-        {
-          "number": 2,
-          "date": "2024-10-29",
-          "time": "9:00-10:30",
-          "status": "tentative"
-        },
-        {
-          "number": 3,
-          "date": "2024-11-05",
-          "time": "9:00-10:30",
-          "status": "tentative"
-        }
-      ]
-    },
-    "zoom": {
-      "url": "https://jaist-ac-jp.zoom.us/j/87840898248?pwd=iQgrJVXZqRVpdP1yMC6etMtqDEKfkP.1",
-      "meetingId": "878 4089 8248",
-      "passcode": "261491"
-    },
-    "abstract": "Robot learning has advanced rapidly with progress in large-scale imitation learning, reinforcement learning, and vision–language–action (VLA) models, enabling robots to perceive and act more effectively in unstructured environments. However, achieving safe and generalizable behaviors across diverse tasks and embodiments remains a major challenge. This talk will review recent trends in learning paradigms, scalable data collection, and foundation models, highlighting challenges in data diversity, embodiment transfer, safety, and robustness. I will also share an outlook on multimodal cross-embodiment learning—integrating novel robotic devices with hierarchical strategies from low-level control to high-level reasoning—as a pathway toward safe, adaptive, and generalizable robot systems.",
-    "pdfPath": "seminars/upcoming/Quan Luu/invited talk Quan Luu.pdf"
+    "title": "Towards an End-to-End Approach for Loco-Manipulation",
+    "type": "In-Person Seminar",
+    "date": "Dec. 3rd",
+    "time": "15:00 – 16:30",
+    "location": "IS Collaboration Room 7",
+    "abstract": "Robotics is entering a transformative era where end-to-end learning approaches are demonstrating unprecedented capability–driving major advances in autonomous driving, dexterous manipulation, and humanoid locomotion. In this talk, Dr. Vu Nhat Minh will discuss recent progress in reinforcement learning, trajectory optimization, and end-to-end frameworks for loco-manipulation–a new frontier in robotics that unifies two long-standing challenges: locomotion and manipulation.",
+    "pdfPath": "seminars/upcoming/Vu_Nhat_Minh/seminar_flier_Vu Nhat Minh.pdf"
   }
 ]
