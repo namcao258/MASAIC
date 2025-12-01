@@ -428,6 +428,12 @@
                     return `${isEn ? 'Talk' : '講演'} ${talk.number}: ${dateStr}, ${talk.time} JST${status}`;
                 }).join('<br>');
                 dateDisplay = talks;
+            } else {
+                // Single seminar
+                dateDisplay = `${seminar.date}, ${seminar.time}`;
+                if (seminar.location) {
+                    dateDisplay += `<br>${isEn ? 'Location:' : '場所:'} ${seminar.location}`;
+                }
             }
 
             // Zoom info - removed
@@ -462,10 +468,12 @@
                         <div class="seminar-links" style="margin-top: 10px;">
                             ${pdfLink}
                         </div>
+                        ${seminar.speaker.bio ? `
                         <div class="speaker-bio" style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee;">
                             <strong>${isEn ? 'Bio:' : '経歴:'}</strong>
                             <p style="font-size: 0.9em; color: #666;">${seminar.speaker.bio}</p>
                         </div>
+                        ` : ''}
                     </div>
                 </div>
             `;
