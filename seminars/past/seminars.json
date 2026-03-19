@@ -1,5 +1,24 @@
 [
   {
+    "id": "vu-nhat-minh-2024",
+    "speaker": {
+      "name": "Dr. Vu Nhat Minh",
+      "title": "Assistant Professor",
+      "affiliation": "College of Engineering and Computer Vision, VinUniversity, Vietnam",
+      "website": "https://scholar.google.com/citations?user=qyExc4QAAAAJ&hl=en",
+      "photo": "seminars/past/Vu_Nhat_Minh/VuNhatMinh_photo.png",
+      "bio": ""
+    },
+    "title": "Towards an End-to-End Approach for Loco-Manipulation",
+    "type": "In-Person Seminar",
+    "abstract": "Robotics is entering a transformative era where end-to-end learning approaches are demonstrating unprecedented capability–driving major advances in autonomous driving, dexterous manipulation, and humanoid locomotion. In this talk, Dr. Vu Nhat Minh will discuss recent progress in reinforcement learning, trajectory optimization, and end-to-end frameworks for loco-manipulation–a new frontier in robotics that unifies two long-standing challenges: locomotion and manipulation.",
+    "pdfPath": "seminars/past/Vu_Nhat_Minh/seminar_flier_Vu Nhat Minh.pdf",
+    "youtube": "",
+    "date": "2024-12-03",
+    "time": "15:00-16:30 JST",
+    "location": "IS Collaboration Room 7"
+  },
+  {
     "id": "chiara-bartolozzi-2024-talk1",
     "speaker": {
       "name": "Dr. Chiara Bartolozzi",

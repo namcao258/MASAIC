@@ -1,20 +1,27 @@
 [
   {
-    "id": "vu-nhat-minh-2024",
+    "id": "crossx-entire-meeting-2026-03",
     "speaker": {
-      "name": "Dr. Vu Nhat Minh",
-      "title": "Assistant Professor",
-      "affiliation": "College of Engineering and Computer Vision, VinUniversity, Vietnam",
-      "website": "https://scholar.google.com/citations?user=qyExc4QAAAAJ&hl=en",
-      "photo": "seminars/upcoming/Vu_Nhat_Minh/VuNhatMinh_photo.png",
+      "name": "CrossX Team",
+      "title": "All Members",
+      "affiliation": "MASAIC Project - JAIST",
+      "website": "",
+      "photo": "images/logo/logo.png",
       "bio": ""
     },
-    "title": "Towards an End-to-End Approach for Loco-Manipulation",
-    "type": "In-Person Seminar",
-    "date": "Dec. 3rd",
-    "time": "15:00 – 16:30",
-    "location": "IS Collaboration Room 7",
-    "abstract": "Robotics is entering a transformative era where end-to-end learning approaches are demonstrating unprecedented capability–driving major advances in autonomous driving, dexterous manipulation, and humanoid locomotion. In this talk, Dr. Vu Nhat Minh will discuss recent progress in reinforcement learning, trajectory optimization, and end-to-end frameworks for loco-manipulation–a new frontier in robotics that unifies two long-standing challenges: locomotion and manipulation.",
-    "pdfPath": "seminars/upcoming/Vu_Nhat_Minh/seminar_flier_Vu Nhat Minh.pdf"
+    "title": "CrossX Entire Meeting",
+    "type": "Hybrid Meeting",
+    "date": "March 23",
+    "time": "13:00–17:00",
+    "location": "KS Collaboration Room 3",
+    "abstract_en": "Venue (JAIST members): KS Collaboration Room 3\n\nZoom (outside JAIST members): https://jaist-ac-jp.zoom.us/j/81661446823?pwd=JVT4HT8id6q4Wgfzi9bOiuj2Y33soR.1\n\nProgram: Please refer to this link: https://docs.google.com/spreadsheets/d/1TYUSKva85WMR5-wFfAYDxkeKsILB-H54/edit?gid=365190622#gid=365190622",
+    "abstract_ja": "場所（JAISTメンバー）： KSコラボレーションルーム3\n\nZoom（JAIST外のメンバー）： https://jaist-ac-jp.zoom.us/j/81661446823?pwd=JVT4HT8id6q4Wgfzi9bOiuj2Y33soR.1\n\nプログラム： 以下のリンクをご参照ください　https://docs.google.com/spreadsheets/d/1TYUSKva85WMR5-wFfAYDxkeKsILB-H54/edit?gid=365190622#gid=365190622",
+    "pdfPath": "",
+    "programUrl": "https://docs.google.com/spreadsheets/d/1TYUSKva85WMR5-wFfAYDxkeKsILB-H54/edit?gid=365190622#gid=365190622",
+    "zoom": {
+      "url": "https://jaist-ac-jp.zoom.us/j/81661446823?pwd=JVT4HT8id6q4Wgfzi9bOiuj2Y33soR.1",
+      "meetingId": "816 6144 6823",
+      "passcode": "JVT4HT8id6q4Wgfzi9bOiuj2Y33soR.1"
+    }
   }
 ]

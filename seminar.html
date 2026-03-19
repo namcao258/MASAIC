@@ -436,6 +436,9 @@
                 }
             }
 
+            // Get abstract based on language
+            const abstract = isEn ? (seminar.abstract_en || seminar.abstract) : (seminar.abstract_ja || seminar.abstract);
+
             // Zoom info - removed
             const zoomInfo = '';
 
@@ -444,7 +447,21 @@
                 <a href="${seminar.pdfPath}" target="_blank" class="pub-link">📄 ${isEn ? 'Download PDF' : 'PDFダウンロード'}</a>
             ` : '';
 
+            // Program URL link (for meetings)
+            const programLink = seminar.programUrl ? `
+                <a href="${seminar.programUrl}" target="_blank" class="pub-link" style="background-color: #2563eb; color: white;">📋 ${isEn ? 'View Program' : 'プログラムを見る'}</a>
+            ` : '';
+
+            // Zoom link (for meetings)
+            const zoomLink = seminar.zoom && seminar.zoom.url ? `
+                <a href="${seminar.zoom.url}" target="_blank" class="pub-link" style="background-color: #2D8CFF; color: white;">📹 ${isEn ? 'Join Zoom' : 'Zoomに参加'}</a>
+            ` : '';
+
             const photoSrc = seminar.speaker.photo || 'images/speakers/speaker-placeholder.jpg';
+
+            // Title styling - make it more prominent for meetings
+            const titleStyle = seminar.type && seminar.type.includes('Meeting') ?
+                'font-size: 1.3em; color: #2563eb; font-weight: bold;' : '';
 
             return `
                 <div class="seminar-card">
@@ -457,15 +474,17 @@
                         <p class="speaker-title">${seminar.speaker.title}</p>
                         ${seminar.speaker.website ? `<p><a href="${seminar.speaker.website}" target="_blank" class="pub-link">🔗 ${isEn ? 'Website' : 'ウェブサイト'}</a></p>` : ''}
                         <div class="talk-info">
-                            <p class="talk-title"><strong>${isEn ? 'Talk:' : '講演:'}</strong> ${seminar.title}</p>
+                            <p class="talk-title" style="${titleStyle}"><strong>${isEn ? 'Talk:' : '講演:'}</strong> ${seminar.title}</p>
                             ${seminar.series && seminar.series.isSeries ? `<p style="font-style: italic; color: #666; margin-bottom: 0.5rem;"><em>${isEn ? 'This is a series of' : 'これは'} ${seminar.series.totalTalks} ${isEn ? 'talks' : '回の講演シリーズです'}</em></p>` : ''}
                             <p class="talk-date">📅 ${dateDisplay}</p>
-                            <p class="talk-abstract">
-                                <strong>${isEn ? 'Abstract:' : '概要:'}</strong> ${seminar.abstract}
+                            <p class="talk-abstract" style="white-space: pre-line;">
+                                ${abstract}
                             </p>
                         </div>
                         ${zoomInfo}
                         <div class="seminar-links" style="margin-top: 10px;">
+                            ${programLink}
+                            ${zoomLink}
                             ${pdfLink}
                         </div>
                         ${seminar.speaker.bio ? `
